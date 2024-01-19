@@ -78,6 +78,13 @@ public class Configuracion {
         }
 
         // Recargar la vista actual con el nuevo idioma
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("configuracion.fxml"), LenguageManager.getInstance().getBundle());
+        Parent root = fxmlLoader.load();
+
+        Configuracion controllerConfiguracion = fxmlLoader.getController();
+        controllerConfiguracion.recibirData(this.creado);
+
+        this.creado.getControllers().getControllerPagPrincipal().cambiarContenido(root);
         recargarVistaActual();
 
     }
