@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 import model.LenguageManager;
 import model.Libro;
 import model.LibrosCreados;
+import org.example.bibliogest_javihevia.HelloApplication;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -29,8 +30,8 @@ public class Libros {
     private Label tituloLibro;
 
     static List<Libro> listaLibros=new ArrayList<>();
-    private LibrosCreados librosCreados;
-    private PagPrincipal pagPrincipal;
+    private LibrosCreados librosCreados=PagPrincipal.getCreados();
+
 
     public static void addBookToList(Libro libro) {
         listaLibros.add(libro);
@@ -87,20 +88,12 @@ public class Libros {
                 ResourceBundle bundle = LenguageManager.getInstance().getBundle();
 
                 // Carga el archivo FXML y pasa el ResourceBundle
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/bibliogest_javihevia/vistalibro.fxml"), bundle);
-                Parent root = loader.load();
-
-                VistaLibro vistaLibro = loader.getController();
-                vistaLibro.establecerDatos(this.librosCreados);
-                vistaLibro.setVistaOrigen("Libros");
-                vistaLibro.setTituloLibro(libroSeleccionado.getNombre());
-                vistaLibro.setAutorLibro(libroSeleccionado.getAutor());
-                vistaLibro.setPagPrincipalController(this.pagPrincipal);
-
-                Stage stage = (Stage) scrollLibros.getScene().getWindow();
-                stage.setTitle("BiblioGest");
-                stage.setScene(new Scene(root));
-                stage.show();
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("vistalibro.fxml"), LenguageManager.getInstance().getBundle());
+                Parent root = fxmlLoader.load();
+                VistaLibro vistaLibro = fxmlLoader.getController();
+                vistaLibro.setVistaOrigen("libros.fxml");
+                vistaLibro.recibirData(this.librosCreados);
+                this.librosCreados.getControllers().getControllerPagPrincipal().cambiarStage(root);
             } else {
                 mostrarAlertaError("Tienes que seleccionar algún libro");
             }
@@ -125,12 +118,6 @@ public class Libros {
         alert.showAndWait();
     }
 
-
-
-
-    public void setPagPrincipalController(PagPrincipal pagPrincipal) {
-        this.pagPrincipal=pagPrincipal;
-    }
 
     public void recibirData(LibrosCreados creados) {
         this.librosCreados=creados;

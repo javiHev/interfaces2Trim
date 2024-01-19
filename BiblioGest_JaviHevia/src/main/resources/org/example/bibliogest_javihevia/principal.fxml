@@ -9,76 +9,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="605.0" prefWidth="898.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PagPrincipal">
+<AnchorPane prefHeight="605.0" prefWidth="898.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PagPrincipal">
    <children>
-      <VBox fx:id="vboxPrincipal" prefHeight="823.0" prefWidth="261.0" style="-fx-background-color: #D4D4D4;">
-         <children>
-            <VBox prefHeight="695.0" prefWidth="246.0" style="-fx-background-color: #D4D4D4;">
-               <VBox.margin>
-                  <Insets top="30.0" />
-               </VBox.margin>
-               <children>
-                  <Label fx:id="saludo" alignment="CENTER" prefHeight="27.0" prefWidth="269.0" styleClass="text-font" stylesheets="@../../../styles/login.css" text="%principal.welcome_user_message">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="userName" alignment="CENTER" prefHeight="27.0" prefWidth="271.0" styleClass="text-font" stylesheets="@../../../styles/login.css" text="%">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Button fx:id="addBook" mnemonicParsing="false" onAction="#addLibro" prefHeight="34.0" prefWidth="265.0" styleClass="boton" stylesheets="@../../../styles/botones.css" text="%principal.add_book">
-                     <graphic>
-                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../img/añadir.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <VBox.margin>
-                        <Insets top="145.0" />
-                     </VBox.margin></Button>
-                  <Button fx:id="books" mnemonicParsing="false" onAction="#vistaLibros" prefHeight="33.0" prefWidth="266.0" styleClass="boton" stylesheets="@../../../styles/botones.css" text="%principal.books">
-                     <graphic>
-                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../img/libro.png" />
-                           </image>
-                        </ImageView>
-                     </graphic></Button>
-                  <Button fx:id="detail_view" mnemonicParsing="false" onAction="#vistaDetallada" prefHeight="33.0" prefWidth="269.0" styleClass="boton" stylesheets="@../../../styles/botones.css" text="%principal.detailed_view">
-                     <graphic>
-                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../img/vista.png" />
-                           </image>
-                        </ImageView>
-                     </graphic></Button>
-                  <Button fx:id="user" mnemonicParsing="false" onAction="#usuario" prefHeight="34.0" prefWidth="268.0" styleClass="boton" stylesheets="@../../../styles/botones.css" text="%principal.user">
-                     <graphic>
-                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../img/usuario.png" />
-                           </image>
-                        </ImageView>
-                     </graphic></Button>
-                  <Button fx:id="configuration" mnemonicParsing="false" onAction="#configuracion" prefHeight="33.0" prefWidth="275.0" styleClass="boton" stylesheets="@../../../styles/botones.css" text="%principal.settings">
-                     <graphic>
-                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../img/ajustes.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <VBox.margin>
-                        <Insets top="500.0" />
-                     </VBox.margin></Button>
-               </children>
-            </VBox>
-         </children>
-      </VBox>
-      <AnchorPane fx:id="pagPrincipal" layoutX="262.0" layoutY="29.0" prefHeight="794.0" prefWidth="774.0">
+      <AnchorPane fx:id="pagPrincipal" layoutX="245.0" layoutY="29.0" prefHeight="794.0" prefWidth="791.0">
          <children>
             <ImageView fitHeight="400.0" fitWidth="400.0" layoutX="142.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -91,5 +24,85 @@
             </Label>
          </children>
       </AnchorPane>
+      <VBox fx:id="vboxPrincipal" prefHeight="914.0" prefWidth="245.0" style="-fx-background-color: #D4D4D4;">
+         <children>
+            <Label fx:id="saludo" alignment="CENTER" prefHeight="61.0" prefWidth="265.0" styleClass="text-font" stylesheets="@../../../styles/login.css" text="%principal.welcome_user_message">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="userName" alignment="CENTER" prefHeight="34.0" prefWidth="261.0" styleClass="text-font" stylesheets="@../../../styles/login.css">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="addBook" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#addLibro" prefHeight="34.0" prefWidth="274.0" styleClass="boton" stylesheets="@../../../styles/botones.css" text="%principal.add_book">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/añadir.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets top="145.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="books" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#vistaLibros" prefHeight="33.0" prefWidth="282.0" styleClass="boton" stylesheets="@../../../styles/botones.css" text="%principal.books">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/libro.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="detail_view" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#vistaDetallada" prefHeight="33.0" prefWidth="269.0" styleClass="boton" stylesheets="@../../../styles/botones.css" text="%principal.detailed_view">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/vista.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="user" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#usuario" prefHeight="34.0" prefWidth="272.0" styleClass="boton" stylesheets="@../../../styles/botones.css" text="%principal.user">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/usuario.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="configuration" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#configuracion" prefHeight="33.0" prefWidth="275.0" styleClass="boton" stylesheets="@../../../styles/botones.css" text="%principal.settings">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/ajustes.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets top="500.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

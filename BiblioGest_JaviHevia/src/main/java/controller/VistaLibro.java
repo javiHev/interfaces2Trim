@@ -50,20 +50,12 @@ public class VistaLibro {
 
     @FXML
     void returnToController(ActionEvent event) throws IOException {
-        Button btnVolver = (Button) event.getSource();
-        ResourceBundle bundle = LenguageManager.getInstance().getBundle();
-        String ultimaVista = this.creados.getUltimaVistaFXML();
-
-
-
-            // Si no hay una "última vista" definida, carga una vista por defecto
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/bibliogest_javihevia/libros.fxml"), bundle);
+        if (vistaOrigen != null) {
+            ResourceBundle bundle = LenguageManager.getInstance().getBundle();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/bibliogest_javihevia/"+vistaOrigen), bundle);
             Parent root = loader.load();
             this.creados.getControllers().getControllerPagPrincipal().cambiarStage(root);
-            Stage stage = (Stage) btnVolver.getScene().getWindow();
-            stage.setTitle("BiblioGest");
-            stage.setScene(root.getScene());
-
+        }
     }
 
     private ResourceBundle resourceBundle;

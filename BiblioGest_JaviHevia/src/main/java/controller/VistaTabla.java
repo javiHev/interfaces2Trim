@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 import model.LenguageManager;
 import model.Libro;
 import model.LibrosCreados;
+import org.example.bibliogest_javihevia.HelloApplication;
 
 
 import java.io.IOException;
@@ -31,7 +32,7 @@ public class VistaTabla{
 
 
     private PagPrincipal pagPrincipal;
-    private LibrosCreados librosCreados;
+    private LibrosCreados librosCreados=PagPrincipal.getCreados();;
     public void recibirData(LibrosCreados librosCreados){
         this.librosCreados = librosCreados;
     }
@@ -80,18 +81,14 @@ public class VistaTabla{
                 ResourceBundle bundle = LenguageManager.getInstance().getBundle();
 
                 // Carga el archivo FXML y pasa el ResourceBundle
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/bibliogest_javihevia/vistalibro.fxml"), bundle);
-                Parent root = loader.load();
-                VistaLibro vistaLibro = loader.getController();
-                vistaLibro.establecerDatos(this.librosCreados);
-                vistaLibro.setVistaOrigen("VistaTabla");
-                vistaLibro.setTituloLibro(libroSeleccionado.getNombre());
-                vistaLibro.setAutorLibro(libroSeleccionado.getAutor());
-                vistaLibro.setPagPrincipalController(this.pagPrincipal);
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("vistalibro.fxml"), LenguageManager.getInstance().getBundle());
+                Parent root = fxmlLoader.load();
+                VistaLibro vistaLibro = fxmlLoader.getController();
+                vistaLibro.setVistaOrigen("vistatabla.fxml");
+                vistaLibro.recibirData(this.librosCreados);
+                this.librosCreados.getControllers().getControllerPagPrincipal().cambiarStage(root);
 
-                Stage stage = (Stage) tablaLibros.getScene().getWindow();
-                stage.setTitle("BiblioGest");
-                stage.setScene(new Scene(root));
+
             }else{
                 mostrarAlertaError("Tienes que seleccionar algún libro");
             }

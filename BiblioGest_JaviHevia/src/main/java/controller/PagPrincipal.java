@@ -17,6 +17,7 @@ import model.LibrosCreados;
 import org.example.bibliogest_javihevia.HelloApplication;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
@@ -32,7 +33,7 @@ public class PagPrincipal {
 
     private AddLibro addLibro = new AddLibro();
 
-    private LibrosCreados creados;
+    private static LibrosCreados creados;
     @FXML
     private Button addBook;
 
@@ -64,7 +65,6 @@ public class PagPrincipal {
 
     @FXML
     void addLibro() throws IOException {
-
 
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("addlibro.fxml"), LenguageManager.getInstance().getBundle());
         Parent root = fxmlLoader.load();
@@ -143,8 +143,22 @@ public class PagPrincipal {
         welcome_message.setText(bundle.getString("principal.welcome_message"));
     }
 
+
     public void meterEstilo(String s) {
-        this.pagPrincipal.getStylesheets().add(getClass().getResource(s).toExternalForm());
+        URL url = getClass().getResource(s);
+        if (url != null) {
+            this.vboxPrincipal.getStylesheets().clear();
+            this.vboxPrincipal.getStylesheets().add(url.toExternalForm());
+        } else {
+            System.out.println("No se encontró el archivo CSS: " + s);
+        }
+    }
+    public static LibrosCreados getCreados(){
+        return creados;
+    }
+
+    public VBox getVboxPrincipal() {
+        return this.vboxPrincipal;
     }
 }
 
