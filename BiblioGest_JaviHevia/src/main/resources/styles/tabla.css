@@ -1,0 +1,33 @@
+.table-view {
+    -fx-base: #4E7AC7;
+    -fx-control-inner-background: #4E7AC7;
+    -fx-control-inner-background-alt: #729ECE; /* color alternativo para las filas */
+    -fx-text-base-color: white;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #365880; /* Color de fondo para los encabezados de las columnas */
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: #4E7AC7; /* Color de fondo por defecto para las filas */
+    -fx-text-fill: white; /* Color del texto en las filas */
+}
+
+.table-view .table-row-cell:even {
+    -fx-background-color: #9DB2BF; /* Color de fondo para filas pares */
+}
+
+.table-view .table-row-cell:odd {
+    -fx-background-color: #DDE6ED; /* Color de fondo para filas impares */
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #365880; /* Color de fondo para la fila seleccionada */
+    -fx-text-fill: white; /* Color del texto para la fila seleccionada */
+}
+
+.table-view .column-header, .table-view .column-header .label {
+    -fx-text-fill: white; /* Color del texto en los encabezados de las columnas */
+    -fx-font-weight: bold; /* Negrita para los encabezados de las columnas */
+}

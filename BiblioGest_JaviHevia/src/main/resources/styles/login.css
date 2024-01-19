@@ -1,0 +1,50 @@
+@font-face {
+    font-family: 'Roboto Mono';
+    src: url('fonts/RobotoMono-Bold.ttf');
+    font-weight: bold;
+}
+
+.text-font {
+    -fx-font-family: 'Roboto Mono';
+    -fx-font-weight: bold;
+    -fx-text-fill:#27374D
+}
+.text-field {
+    -fx-background-color: #DDE6ED;
+    -fx-border-color: transparent;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+    -fx-text-fill: #27374D;
+}
+
+.button {
+    -fx-background-color: #4E7AC7;
+    -fx-text-fill: white;
+    -fx-border-color: #3D5A80;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+.button:hover {
+    -fx-background-color: #729ECE;
+}
+
+.button:pressed {
+    -fx-background-color: #365880;
+}
+.botonDelete{
+ -fx-background-color: #FC2947
+    -fx-text-fill: white;
+    -fx-border-color: #FC2947;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+.botonDelete:hover {
+    -fx-background-color: #DDE6ED;
+    -fx-text-fill: #FC2947;
+}
+
+.botonDelete:pressed {
+    -fx-background-color: #9DB2BF;
+    -fx-text-fill: #FC2947;
+}

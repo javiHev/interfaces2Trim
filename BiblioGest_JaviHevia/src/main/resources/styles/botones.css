@@ -1,0 +1,22 @@
+.boton {
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+    -fx-text-fill: black; /* Color del texto */
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+.boton:hover {
+    -fx-background-color: #729ECE; /* Color de fondo al pasar el mouse */
+}
+
+.boton:pressed, .boton:focused {
+    -fx-background-color: #4E7AC7; /* Color de fondo al hacer clic */
+    -fx-text-fill: white; /* Color del texto al hacer clic */
+    -fx-border-color: #3D5A80; /* Color del borde al hacer clic */
+}
+
+.boton:pressed {
+    -fx-background-color: #365880; /* Color de fondo al mantener presionado */
+}
+

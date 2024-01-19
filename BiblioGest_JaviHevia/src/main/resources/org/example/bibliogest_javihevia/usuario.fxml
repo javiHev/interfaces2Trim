@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="794.0" prefWidth="774.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Usuario">
+   <children>
+      <TextField fx:id="nombreText" layoutX="189.0" layoutY="256.0" styleClass="text-field" stylesheets="@../../../styles/login.css" promptText="%new_name" />
+      <TextField fx:id="emailText" layoutX="448.0" layoutY="378.0" styleClass="text-field" stylesheets="@../../../styles/login.css" promptText="%email" />
+      <TextField fx:id="edadText" layoutX="189.0" layoutY="378.0" styleClass="text-field" stylesheets="@../../../styles/login.css" promptText="%age" />
+      <TextField fx:id="apellidoText" layoutX="448.0" layoutY="256.0" styleClass="text-field" stylesheets="@../../../styles/login.css" promptText="%new_surname" />
+      <Button fx:id="btnGuardar" layoutX="79.0" layoutY="500.0" mnemonicParsing="false" onAction="#guardarUsuario" prefHeight="37.0" prefWidth="358.0" styleClass="text-font" stylesheets="@../../../styles/login.css" text="%send" />
+      <Label layoutX="189.0" layoutY="239.0" styleClass="text-font" stylesheets="@../../../styles/login.css" text="%new_name_label" />
+      <Label layoutX="448.0" layoutY="239.0" styleClass="text-font" stylesheets="@../../../styles/login.css" text="%new_surname_label" />
+      <Label layoutX="189.0" layoutY="361.0" styleClass="text-font" stylesheets="@../../../styles/login.css" text="%age_label" />
+      <Label layoutX="448.0" layoutY="361.0" styleClass="text-font" stylesheets="@../../../styles/login.css" text="%email_label" />
+      <Button fx:id="logOut" layoutX="448.0" layoutY="500.0" mnemonicParsing="false" onAction="#volverLogin" prefHeight="37.0" prefWidth="285.0" styleClass="botonDelete" stylesheets="@../../../styles/botonDelete.css" text="%logout" />
+   </children>
+</AnchorPane>
