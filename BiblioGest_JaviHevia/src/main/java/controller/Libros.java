@@ -2,10 +2,13 @@ package controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import model.LenguageManager;
@@ -22,12 +25,19 @@ import java.util.ResourceBundle;
 public class Libros {
 
     @FXML
-    private ScrollPane scrollLibros;
-    @FXML
-    private Label autorLibro;
+    private Button btnAnterior;
 
     @FXML
-    private Label tituloLibro;
+    private Button btnSiguiente;
+
+    @FXML
+    private Label pagina;
+
+    @FXML
+    private GridPane rellenar;
+    private int numeroPagina;
+    private int paginasTotales;
+    private int librosXpagina = 6;
 
     static List<Libro> listaLibros=new ArrayList<>();
     private LibrosCreados librosCreados=PagPrincipal.getCreados();
@@ -38,48 +48,46 @@ public class Libros {
         System.out.println("Libro: " + libro.getNombre() + "\nAutor: " + libro.getAutor());
     }
 
-    public void initialize() {
-        cargarLibros();
-    }
+    public void crearLibros() throws IOException {
+        int y = 0;
+        this.rellenar.setHgap(10);
+        this.rellenar.setVgap(10);
 
-    private void cargarLibros() {
-        VBox content = new VBox(10); // Espacio vertical entre elementos
-        for (Libro libro : listaLibros) {
-            content.getChildren().add(crearVistaLibro(libro));
+        for(int i = librosXpagina * numeroPagina; i < librosXpagina * (numeroPagina + 1) && i < this.librosCreados.getLibros().size(); i++){
+            System.out.println(i);
+            AnchorPane anchorPane = new AnchorPane();
+            anchorPane.setId(this.librosCreados.getLibros().get(i).getNombre());
+
+
+            anchorPane.getStyleClass().add("cadaAnchor");
+
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("cadalibro.fxml"), LenguageManager.getInstance().getBundle());
+            Parent root = fxmlLoader.load();
+
+            SoloUnLibro controllerCadaLibro = fxmlLoader.getController();
+            controllerCadaLibro.recibirData(this.librosCreados,this.librosCreados.getLibros().get(i));
+            anchorPane.getChildren().setAll(root);
+
+
+            int fila = y / 4;
+            int columna = y % 4;
+            Insets margin = new Insets(10, 10, 10, 10);
+            GridPane.setMargin(anchorPane, margin);
+            GridPane.setFillHeight(anchorPane,false);
+            GridPane.setFillWidth(anchorPane,false);
+            this.rellenar.setPrefSize(800,600);
+
+            GridPane.setConstraints(anchorPane,columna,fila);
+            this.rellenar.getChildren().add(anchorPane);
+            y++;
         }
-        scrollLibros.setContent(content);
+        this.rellenar.setLayoutX(70);
+        this.rellenar.setLayoutY(70);
+
     }
 
-    private AnchorPane crearVistaLibro(Libro libro) {
-        AnchorPane pane = new AnchorPane();
-        Label titulo = new Label(libro.getNombre());
-        Label autor = new Label(libro.getAutor());
-        Button botonVer = new Button("VER");
-
-        titulo.setStyle("-fx-font-size:16px;font-family: 'Roboto Mono';\n" +
-                "    src: url('fonts/RobotoMono-Bold.ttf'); font-weight: bold;");
-        autor.setStyle("-fx-font-size:14px;font-family: 'Roboto Mono';\\n\" +\n" +
-                "                \"    src: url('fonts/RobotoMono-Bold.ttf'); font-weight: regular;");
-        botonVer.setStyle(" -fx-background-color: #4E7AC7;\n" +
-                "    -fx-text-fill: white;\n" +
-                "    -fx-border-color: #3D5A80;\n" +
-                "    -fx-border-radius: 5;\n" +
-                "    -fx-background-radius: 5;");
 
 
-        titulo.setLayoutX(20);
-        titulo.setLayoutY(10);
-        autor.setLayoutX(20);
-        autor.setLayoutY(40);
-        botonVer.setLayoutX(20);
-        botonVer.setLayoutY(70);
-
-
-        botonVer.setOnAction(event -> cambiarVista(libro));
-
-        pane.getChildren().addAll(titulo, autor, botonVer);
-        return pane;
-    }
     @FXML
     public void cambiarVista(Libro libroSeleccionado) {
         try {
@@ -117,7 +125,39 @@ public class Libros {
         alert.setContentText(contenido);
         alert.showAndWait();
     }
+    @FXML
+    void anterior(MouseEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("libros.fxml"), LenguageManager.getInstance().getBundle());
+        Parent root = fxmlLoader.load();
+        Libros controllerLibros = fxmlLoader.getController();
+        controllerLibros.establecerDatos(this.librosCreados,this.numeroPagina - 1);
+        this.librosCreados.getControllers().getControllerPagPrincipal().cambiarContenido(root);
+    }
 
+    @FXML
+    void siguiente(MouseEvent event) throws IOException {
+
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("libros.fxml"), LenguageManager.getInstance().getBundle());
+        Parent root = fxmlLoader.load();
+        Libros controllerLibros = fxmlLoader.getController();
+        controllerLibros.establecerDatos(this.librosCreados,this.numeroPagina + 1);
+        this.librosCreados.getControllers().getControllerPagPrincipal().cambiarContenido(root);
+    }
+    public void establecerDatos(LibrosCreados creados, int pagina) throws IOException {
+        this.librosCreados = creados;
+        this.numeroPagina = pagina;
+        this.paginasTotales = (int) (double) (this.librosCreados.getLibros().size() / this.librosXpagina);
+        if((double) this.numeroPagina <= 0){
+            this.btnAnterior.setDisable(true);
+        }
+        if((double) this.numeroPagina>= this.paginasTotales){
+            this.btnSiguiente.setDisable(true);
+        }
+        System.out.println(this.numeroPagina);
+        System.out.println(this.paginasTotales);
+        this.crearLibros();
+
+    }
 
     public void recibirData(LibrosCreados creados) {
         this.librosCreados=creados;
