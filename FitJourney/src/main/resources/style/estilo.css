@@ -1,0 +1,59 @@
+.miAnchorPane {
+    -fx-background-radius: 20;
+    -fx-background-color: #FFFFFF; /* Puedes cambiar el color de fondo según lo necesites */
+}
+
+.anchorLogin{
+    -fx-background-radius: 20;
+    -fx-background-color: linear-gradient(from 0% 0% to 0% 100%, #41BA75 0%, #025E2E 100%);
+}
+
+.texto {
+    -fx-font-family: "Roboto Bold"; /* Asegúrate de que la fuente se llama así en tu proyecto */
+    -fx-font-size: 24px;
+    -fx-text-fill: #FFFFFF; /* Color blanco */
+}
+
+.text-field {
+    -fx-background-radius: 20;
+    -fx-prompt-text-fill: #9DB2BF;
+}
+
+.button-loggin{
+    -fx-background-radius: 30;
+     -fx-background-color: #FFFFFF;
+     -fx-text-fill: #025E2E;
+     -fx-font-family: "Roboto Bold";
+}
+
+.anchor-fondo{
+     -fx-background-radius: 20;
+     -fx-background-color: #FFFFFF;
+ }
+
+ .vbox-style {
+     -fx-background-color: #43C079; /* Color de fondo para el VBox */
+     -fx-padding: 10px; /* Agrega un poco de espacio alrededor del VBox */
+ }
+
+ .image-view-style {
+     -fx-fit-width: 100%; /* Hace que la imagen se ajuste al ancho disponible, manteniendo la proporción */
+     -fx-preserve-ratio: true; /* Mantiene la proporción de la imagen */
+ }
+
+ .button-style {
+     -fx-font-family: 'Roboto Condensed', sans-serif; /* Asegúrate de que la fuente esté instalada o cargada en tu proyecto */
+     -fx-font-weight: bold; /* Roboto Condensed Bold */
+     -fx-font-style: italic; /* Itálico */
+     -fx-font-size: 17px; /* Tamaño de fuente 24 */
+     -fx-text-fill: #FFFFFF;
+     -fx-background-color: transparent;
+     -fx-border-radius:20
+ }
+
+ .button-style:pressed, .button-style:focused {
+     -fx-background-color: #025E2E /* Color de fondo al hacer clic */
+     -fx-text-fill: white; /* Color del texto al hacer clic */
+     -fx-border-color: #FFFFFF; /* Color del borde al hacer clic */
+     -fx-border-radius:20
+ }

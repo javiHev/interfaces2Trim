@@ -1,0 +1,41 @@
+.label-saludo {
+    -fx-font-family: "Roboto Condensed Light"; /* Asegúrate de que la fuente Roboto Condensed Light esté disponible */
+    -fx-font-style: italic; /* Itálica */
+    -fx-font-size: 37px; /* Tamaño de la fuente */
+    -fx-text-fill: #18244A; /* Color del texto */
+}
+.hbox-style {
+    -fx-background-color: #DAEEE4;
+    -fx-border-radius: 25; /* Bordes redondos */
+    -fx-background-radius: 25; /* Es necesario para que el fondo también sea redondeado */
+}
+.label-frase{
+     -fx-font-family: 'Roboto Condensed', sans-serif; /* Asegúrate de que la fuente esté instalada o cargada en tu proyecto */
+     -fx-font-weight: bold; /* Roboto Condensed Bold */
+     -fx-font-style: italic; /* Itálico */
+     -fx-font-size: 25px; /* Tamaño de fuente 24 */
+     -fx-text-fill: #3DBE75;
+}
+
+.anchor-kcal{
+    -fx-background-radius: 20;
+     -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, #606C8F 0%, #19254B 100%);
+}
+.anchor-rpm{
+    -fx-background-radius: 20;
+     -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, #3DB671 0%, #025E2E 100%);
+}
+
+.label-valores{
+    -fx-font-family: "Roboto Condensed Light"; /* Asegúrate de que la fuente Roboto Condensed Light esté disponible */
+    -fx-font-style: italic; /* Itálica */
+    -fx-font-size: 37px; /* Tamaño de la fuente */
+    -fx-text-fill: #FFFFFF; /* Color del texto */
+}
+.label-data{
+ -fx-font-family: 'Roboto Condensed', sans-serif; /* Asegúrate de que la fuente esté instalada o cargada en tu proyecto */
+     -fx-font-weight: bold; /* Roboto Condensed Bold */
+     -fx-font-style: italic; /* Itálico */
+     -fx-font-size: 60px; /* Tamaño de fuente 24 */
+     -fx-text-fill: #FFFFFF;
+}
