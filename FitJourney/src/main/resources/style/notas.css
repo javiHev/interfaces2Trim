@@ -1,0 +1,24 @@
+.scroll-pane {
+    -fx-background-color: linear-gradient(from 0% 0% to 0% 100%, #3DB671, #035C29);
+    -fx-background-radius: 20;
+    -fx-padding: 0; /* Asegura que no hay relleno extra alrededor del contenido del ScrollPane */
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent; /* Hace el fondo del viewport transparente para que se vea el degradado */
+    -fx-background-radius: 20; /* Asegura que el contenido también tenga bordes redondeados */
+}
+
+.scroll-pane .content {
+    -fx-background-radius: 20; /* Aplica el radio de borde al contenido dentro del ScrollPane */
+}
+
+.scroll-pane .scroll-bar:vertical, .scroll-pane .scroll-bar:horizontal {
+    -fx-background-radius: 10; /* Aplica bordes redondeados a las barras de desplazamiento */
+    -fx-background-color: #3DB671; /* Color de las barras de desplazamiento */
+}
+
+.scroll-pane .scroll-bar .thumb {
+    -fx-background-color: darken(#3DB671, 30%); /* Color de la parte móvil de las barras de desplazamiento */
+    -fx-background-radius: 10; /* Aplica bordes redondeados a la parte móvil de las barras */
+}

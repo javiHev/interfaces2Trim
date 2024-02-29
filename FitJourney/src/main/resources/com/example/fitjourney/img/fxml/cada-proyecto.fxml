@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="332.0" prefWidth="291.0" styleClass="anchor-pane-style" stylesheets="@../../../../../style/proyectos.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fitjourney.Proyectos">
+   <children>
+      <ImageView fitHeight="200.0" fitWidth="302.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/img_9.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="29.0" layoutY="64.0" styleClass="label-proyectName" stylesheets="@../../../../../style/proyectos.css" text="Nombre Proyecto" />
+   </children>
+</AnchorPane>

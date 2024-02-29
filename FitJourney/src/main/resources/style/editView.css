@@ -1,0 +1,102 @@
+.anchor-pane {
+    -fx-background-color: #41BA75;
+    -fx-background-radius: 20;
+}
+
+.anchor-edit {
+    -fx-background-color: #EEEEEE;
+    -fx-background-radius: 8;
+}
+.label-frase{
+ -fx-font-family: 'Roboto Condensed', sans-serif; /* Asegúrate de que la fuente esté instalada o cargada en tu proyecto */
+     -fx-font-weight: bold; /* Roboto Condensed Bold */
+     -fx-font-style: italic; /* Itálico */
+     -fx-font-size: 17px; /* Tamaño de fuente 24 */
+     -fx-text-fill: #FFFFFF;
+}
+
+.text-frase{
+-fx-font-family: 'Roboto Condensed', sans-serif; /* Asegúrate de que la fuente esté instalada o cargada en tu proyecto */
+     -fx-font-weight: bold; /* Roboto Condensed Bold */
+     -fx-font-size: 50px; /* Tamaño de fuente 24 */
+     -fx-text-fill: #FFFFFF;
+}
+
+.labelEscoge{
+    -fx-font-family: "Roboto Condensed Light"; /* Asegúrate de que la fuente Roboto Condensed Light esté disponible */
+    -fx-font-style: italic; /* Itálica */
+    -fx-font-size: 25px; /* Tamaño de la fuente */
+    -fx-text-fill: #18244A; /* Color del texto */
+}
+
+
+.check-box {
+    -fx-font-family: "Roboto Condensed Light";
+    -fx-background-color: transparent;
+    -fx-border-color:#18244A;
+    -fx-text-fill: #AFAFAF; /* Color del texto en estado no seleccionado */
+    -fx-border-color: transparent; /* Borde transparente por defecto */
+    -fx-border-radius: 8; /* Ajusta el radio del borde según necesites */
+    -fx-padding: 4 8; /* Ajusta el relleno según necesites */
+}
+
+.check-box .box,
+.check-box .mark {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+    -fx-shape: ""; /* Elimina la forma del tick */
+}
+
+/* Estilo para CheckBox cuando el ratón pasa por encima */
+.check-box:hover {
+    -fx-border-color: #AFAFAF; /* Color del borde cuando se pasa el ratón por encima */
+}
+
+/* Estilo para CheckBox seleccionado */
+.check-box:selected {
+    -fx-text-fill: #41BA75; /* Color del texto cuando está seleccionado */
+    -fx-background-color: transparent;
+    -fx-border-color: transparent; /* Puedes ajustar si quieres un borde en estado seleccionado */
+}
+
+.check-box:selected .box,
+.check-box:selected .mark {
+    -fx-background-color: transparent;
+}
+
+
+.text-field {
+    -fx-background-color: #EEEEEE; /* Color de fondo del TextField */
+    -fx-background-insets: 0; /* Sin insets adicionales para el color de fondo */
+    -fx-background-radius: 0; /* Bordes cuadrados */
+    -fx-padding: 4 4 4 4; /* Ajusta el relleno para el texto dentro del TextField */
+}
+
+.text-field:focused {
+    -fx-background-color: #EEEEEE, -fx-focus-color, -fx-control-inner-background; /* Mantiene el fondo y agrega la línea de foco */
+    -fx-background-insets: 0, 0 0 1, 1; /* Inset para la línea de foco */
+    -fx-background-radius: 0, 0, 0; /* Bordes cuadrados incluso en foco */
+}
+
+.text-field .content {
+    -fx-padding: 0 0 1 0; /* Ajusta el relleno para el contenido, dejando espacio para la línea inferior */
+}
+
+
+.button {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #43C07A, #025E2E);
+    -fx-text-fill: white; /* Color del texto */
+    -fx-background-radius: 10; /* Radio de borde para bordes redondeados, ajusta según sea necesario */
+    -fx-padding: 5 10; /* Relleno del botón, ajusta según sea necesario */
+    -fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.2), 5, 0.0, 2, 2); /* Sombra suave para dar profundidad */
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #3AA864, #024D26);
+}
+
+.button:pressed {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #368B5A, #023D20);
+    -fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.6), 4, 0.0, 0, 1); /* Sombra más intensa para el efecto de presionado */
+}
