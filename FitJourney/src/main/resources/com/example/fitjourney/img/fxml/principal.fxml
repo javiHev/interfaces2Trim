@@ -10,17 +10,16 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
-<AnchorPane prefHeight="670.0" prefWidth="1187.0" styleClass="anchor-fondo" stylesheets="@../../../../../style/estilo.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fitjourney.PagPrincipal">
+<AnchorPane prefHeight="670.0" prefWidth="1187.0" styleClass="anchor-fondo" stylesheets="@../../../../../style/estilo.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fitjourney.PagPrincipal">
    <children>
       <VBox alignment="BASELINE_CENTER" prefHeight="672.0" prefWidth="173.0" stylesheets="@../../../../../style/estilo.css">
          <children>
-            <ImageView fitHeight="57.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true" styleClass="image-view-style">
+            <ImageView fx:id="home" fitHeight="57.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true" styleClass="image-view-style">
                <image>
                   <Image url="@../logo_redondo.png" />
                </image>
             </ImageView>
-            <Button mnemonicParsing="false" prefHeight="47.0" prefWidth="161.0" styleClass="button-style" stylesheets="@../../../../../style/estilo.css" text="Proyectos  ">
+            <Button fx:id="btnProyectos" mnemonicParsing="false" prefHeight="47.0" prefWidth="161.0" styleClass="button-style" stylesheets="@../../../../../style/estilo.css" text="Proyectos  ">
                <VBox.margin>
                   <Insets top="30.0" />
                </VBox.margin>
@@ -32,7 +31,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="193.0" styleClass="button-style" stylesheets="@../../../../../style/estilo.css" text="Calendario">
+            <Button fx:id="btnCalendario" mnemonicParsing="false" prefHeight="46.0" prefWidth="193.0" styleClass="button-style" stylesheets="@../../../../../style/estilo.css" text="Calendario">
                <graphic>
                   <ImageView fitHeight="35.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -41,7 +40,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="47.0" prefWidth="174.0" styleClass="button-style" stylesheets="@../../../../../style/estilo.css" text="Notas        ">
+            <Button fx:id="btnNotas" mnemonicParsing="false" prefHeight="47.0" prefWidth="174.0" styleClass="button-style" stylesheets="@../../../../../style/estilo.css" text="Notas        ">
                <graphic>
                   <ImageView fitHeight="35.0" fitWidth="38.0" pickOnBounds="true">
                      <image>
@@ -50,7 +49,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="161.0" styleClass="button-style" stylesheets="@../../../../../style/estilo.css" text="Contactos ">
+            <Button fx:id="btnContactos" mnemonicParsing="false" prefHeight="50.0" prefWidth="161.0" styleClass="button-style" stylesheets="@../../../../../style/estilo.css" text="Contactos ">
                <graphic>
                   <ImageView fitHeight="35.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -59,7 +58,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="58.0" prefWidth="316.0" styleClass="button-style" stylesheets="@../../../../../style/estilo.css" text=" Logout  ">
+            <Button fx:id="btnLogout" mnemonicParsing="false" prefHeight="58.0" prefWidth="316.0" styleClass="button-style" stylesheets="@../../../../../style/estilo.css" text=" Logout  ">
                <VBox.margin>
                   <Insets top="290.0" />
                </VBox.margin>
@@ -83,7 +82,7 @@
                <children>
                   <VBox prefHeight="109.0" prefWidth="598.0">
                      <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="56.0" prefWidth="425.0" styleClass="label-saludo" stylesheets="@../../../../../style/principal.css" text="Hola Usuario !!" />
+                        <Label fx:id="userName" alignment="CENTER" contentDisplay="CENTER" prefHeight="56.0" prefWidth="425.0" styleClass="label-saludo" stylesheets="@../../../../../style/principal.css" text="Hola Usuario !!" />
                         <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="55.0" prefWidth="467.0" styleClass="label-frase" stylesheets="@../../../../../style/principal.css" text="Bienvenido a Fit Journey" />
                      </children>
                   </VBox>
@@ -111,7 +110,7 @@
                   <Label layoutX="14.0" layoutY="103.0" styleClass="label-data" stylesheets="@../../../../../style/principal.css" text="82" />
                </children>
             </AnchorPane>
-            <ImageView fitHeight="55.0" fitWidth="59.0" layoutX="920.0" layoutY="603.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="btnChat" fitHeight="55.0" fitWidth="59.0" layoutX="920.0" layoutY="603.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../icons/img_7.png" />
                </image>

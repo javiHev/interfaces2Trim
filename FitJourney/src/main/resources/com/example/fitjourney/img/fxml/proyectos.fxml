@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane fx:id="pagPrincipal" prefHeight="672.0" prefWidth="1014.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="pagPrincipal" prefHeight="672.0" prefWidth="1014.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fitjourney.ControllerProyectos">
    <children>
       <GridPane fx:id="rellenar" layoutX="-1.0" prefHeight="585.0" prefWidth="1014.0">
          <columnConstraints>

@@ -1,4 +1,4 @@
 package com.example.fitjourney;
 
-public class Proyectos {
+public class ControllerNotas {
 }

@@ -1,45 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import java.net.URL?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
 
 <AnchorPane fx:id="pagPrincipal" prefHeight="672.0" prefWidth="1014.0" styleClass="anchor-pane" stylesheets="@../../../../../style/proyectos.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane layoutX="652.0" layoutY="88.0" prefHeight="470.0" prefWidth="330.0" styleClass="anchor-pane-style" stylesheets="@../../../../../style/proyectos.css">
+      <AnchorPane layoutX="652.0" layoutY="88.0" prefHeight="470.0" prefWidth="330.0">
          <children>
-            <Label layoutX="93.0" layoutY="47.0" styleClass="label-proyectName" stylesheets="@../../../../../style/proyectos.css" text="Proyectos" />
-            <Label layoutX="14.0" layoutY="104.0" styleClass="label-proyectName" stylesheets="@../../../../../style/proyectos.css" text="Tareas:" />
-            <Label layoutX="66.0" layoutY="183.0" styleClass="label-tareaName" stylesheets="@../../../../../style/proyectos.css" text="Tarea1" />
-            <Label layoutX="66.0" layoutY="228.0" styleClass="label-tareaName" stylesheets="@../../../../../style/proyectos.css" text="Tarea 2" />
-            <Label layoutX="66.0" layoutY="280.0" styleClass="label-tareaName" stylesheets="@../../../../../style/proyectos.css" text="Tarea 3" />
-            <ImageView fitHeight="406.0" fitWidth="444.0" pickOnBounds="true" preserveRatio="true">
+            <Label layoutX="97.0" layoutY="96.0" styleClass="label-proyectName" stylesheets="@../../../../../style/proyectos.css" text="Contacto" />
+            <Label layoutX="66.0" layoutY="170.0" styleClass="label-tareaName" stylesheets="@../../../../../style/proyectos.css" text="Nombre" />
+            <Label layoutX="70.0" layoutY="245.0" styleClass="label-tareaName" stylesheets="@../../../../../style/proyectos.css" text="Email" />
+            <Label layoutX="63.0" layoutY="291.0" styleClass="label-tareaName" stylesheets="@../../../../../style/proyectos.css" text="Telefono" />
+            <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="38.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/img_16.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="32.0" layoutX="38.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/img_14.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="38.0" layoutY="294.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/img_15.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="268.0" layoutY="414.0" prefHeight="88.0" prefWidth="49.0" styleClass="label-data" stylesheets="@../../../../../style/principal.css" text="..." />
+            <ImageView fitHeight="88.0" fitWidth="145.0" layoutX="75.0" layoutY="-46.0" pickOnBounds="true" preserveRatio="true" />
+            <Label layoutX="65.0" layoutY="209.0" styleClass="label-tareaName" stylesheets="@../../../../../style/proyectos.css" text="Apellido" />
+            <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="38.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/img_3.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="406.0" fitWidth="444.0" layoutX="-5.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../icons/img_10.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="38.0" layoutY="186.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../icons/img_11.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="38.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../icons/img_11.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="38.0" layoutY="283.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../icons/img_11.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="268.0" layoutY="414.0" prefHeight="88.0" prefWidth="49.0" styleClass="label-data" stylesheets="@../../../../../style/principal.css" text="..." />
+            <StackPane layoutX="110.0" layoutY="8.0" prefHeight="68.0" prefWidth="66.0" styleClass="profile-picture-container" stylesheets="@../../../../../style/editView.css">
+               <children>
+                  <ImageView fitHeight="62.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../../../../../Pictures/OIG.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
          </children>
+         <stylesheets>
+            <URL value="@../../../../../style/proyectos.css" />
+            <URL value="@../../../../../style/editView.css" />
+         </stylesheets>
+         <styleClass>
+            <String fx:value="anchor-pane-style" />
+            <String fx:value="img-perfil" />
+         </styleClass>
       </AnchorPane>
       <ImageView fitHeight="550.0" fitWidth="510.0" layoutX="26.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../TipaCorriendo.png" />
+            <Image url="@../Sumo.png" />
          </image>
       </ImageView>
    </children>

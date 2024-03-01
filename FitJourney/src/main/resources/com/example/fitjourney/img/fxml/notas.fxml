@@ -3,7 +3,7 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="pagPrincipal" prefHeight="672.0" prefWidth="1014.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="pagPrincipal" prefHeight="672.0" prefWidth="1014.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fitjourney.ControllerNotas">
    <children>
       <ScrollPane layoutX="204.0" layoutY="32.0" prefHeight="608.0" prefWidth="606.0" stylesheets="@../../../../../style/notas.css" />
    </children>
