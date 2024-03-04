@@ -51,9 +51,15 @@
      -fx-border-radius:20
  }
 
- .button-style:pressed, .button-style:focused {
+ .button-style:pressed {
      -fx-background-color: #025E2E /* Color de fondo al hacer clic */
      -fx-text-fill: white; /* Color del texto al hacer clic */
      -fx-border-color: #FFFFFF; /* Color del borde al hacer clic */
      -fx-border-radius:20
+ }
+ .button-style:focused {
+ -fx-background-color: #025E2E /* Color de fondo al hacer clic */
+      -fx-text-fill: white; /* Color del texto al hacer clic */
+      -fx-border-color: #FFFFFF; /* Color del borde al hacer clic */
+      -fx-border-radius:20
  }

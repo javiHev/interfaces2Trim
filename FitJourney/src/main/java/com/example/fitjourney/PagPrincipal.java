@@ -2,19 +2,22 @@ package com.example.fitjourney;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class PagPrincipal {
+public class PagPrincipal  {
 
     private AddContactos addContactos = new AddContactos();
     private AddProyecto addProyectos=new AddProyecto();
@@ -51,7 +54,16 @@ public class PagPrincipal {
 
     @FXML
     private ImageView home; //Imagen principal =home
+
+    public static DatosProyectos getCreados() {
+        return datosProyectos;
+    }
     /*###############################################################################*/
+   /* @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        btnProyectos.setSelected(false); // Asegúrate de que el ToggleButton no esté seleccionado
+
+    }*/
 
     public void cambiarStage(Object root) throws IOException {
         pagPrincipal.getChildren().setAll((Node) root);
@@ -69,53 +81,65 @@ public class PagPrincipal {
         Parent root = fxmlLoader.load();
         ControllerProyectos controllerProyectos = fxmlLoader.getController();
         controllerProyectos.recibirData(this.datosProyectos);
+
         cambiarStage(root);
 
     }
 
-    @FXML
+ /*   @FXML
     void handlerCalendario() throws IOException {
 
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("calendario.fxml"));
         Parent root = fxmlLoader.load();
-        VistaTabla controllerVitaTabla = fxmlLoader.getController();
+        ControllerCalendario controllerCalendario = fxmlLoader.getController();
         controllerVitaTabla.recibirData(this.creados);
         cambiarStage(root);
-    }
+    }*/
 
     @FXML
-    void usuario() throws IOException {
+    void handlerNotas() throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("usuario.fxml"), LenguageManager.getInstance().getBundle());
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/example/fitjourney/img/fxml/notas.fxml"));
         Parent root = fxmlLoader.load();
-        Usuario controllerUsuarios = fxmlLoader.getController();
-        controllerUsuarios.setPagPrincipalController(this);
-        controllerUsuarios.recibirData(this.creados);
+        ControllerNotas controllerNotas = fxmlLoader.getController();
+        controllerNotas.recibirData(this.datosNotas);
         cambiarStage(root);
     }
 
     @FXML
-    void vistaLibros() throws IOException {
+    void handlerContactos() throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("libros.fxml"), LenguageManager.getInstance().getBundle());
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/example/fitjourney/img/fxml/contactos.fxml"));
         Parent root = fxmlLoader.load();
-        Libros controllerLibros = fxmlLoader.getController();
-        controllerLibros.recibirData(this.creados);
+        ControllerContactos controllerContactos = fxmlLoader.getController();
+        controllerContactos.recibirData(this.datosContactos);
         cambiarStage(root);
     }
 
     @FXML
-    void configuracion() throws IOException {
+    void handlerLogout() throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("configuracion.fxml"), LenguageManager.getInstance().getBundle());
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/example/fitjourney/img/fxml/login.fxml"));
         Parent root = fxmlLoader.load();
-        Configuracion controllerConfiguracion = fxmlLoader.getController();
-        controllerConfiguracion.recibirData(this.creados);
+        Stage stage = (Stage) btnLogout.getScene().getWindow();
+        stage.setTitle("Login");
+        stage.setScene(new Scene(root));
+    }
+    @FXML
+    void handlerPrincipal() throws IOException {
+        System.out.println("Carga");
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/example/fitjourney/img/fxml/pagPrincipal.fxml"));
+        Parent root = fxmlLoader.load();
+        PagPrincipal controllerPagPrincipal = fxmlLoader.getController();
+        String originalText = userName.getText(); // "Bienvenido userName!!"
+// Elimina las partes no deseadas de la cadena
+        String cleanedText = originalText.replace("Bienvenido ", "").replace("!!", "").trim();
+        controllerPagPrincipal.setUserName(cleanedText);
         cambiarStage(root);
     }
 
     public void setUserName(String s) {
-        this.userName.setText(s);
+        this.userName.setText("Bienvenido "+s+"!!");
     }
 
     /*public void eliminarEstilos(){
@@ -124,14 +148,14 @@ public class PagPrincipal {
     public void meterEstilo(String ruta){
         this.main.getStylesheets().add(getClass().getResource(ruta).toExternalForm());
     }*/
-    public void establecerDatos(LibrosCreados creados) throws IOException {
+   /* public void establecerDatos(LibrosCreados creados) throws IOException {
         this.creados = creados;
         this.creados.getControllers().setControllerPanelPrincipal(this);
 
     }
 
-
-    public void actualizarIdioma(ResourceBundle bundle) {
+*/
+   /* public void actualizarIdioma(ResourceBundle bundle) {
         // Actualizar los textos en esta instancia si no te deslogueas
         addBook.setText(bundle.getString("principal.add_book"));
         books.setText(bundle.getString("principal.books"));
@@ -158,5 +182,5 @@ public class PagPrincipal {
 
     public VBox getVboxPrincipal() {
         return this.vboxPrincipal;
-    }
+    }*/
 }

@@ -41,7 +41,7 @@ public class Login {
 //            pagPrincipalController.establecerDatos(this.creados);
 
             Stage stage = (Stage) btnInicio.getScene().getWindow();
-            stage.setTitle("BiblioGest");
+            stage.setTitle("FitJourney");
             stage.setScene(new Scene(root));
         } else {
             String respuesta = (usuario.isEmpty() && password.isEmpty()) ? "Rellena los campos: usuario y contraseña" : (usuario.isEmpty()) ? "Rellena el campo: usuario" : "Rellena el campo: contraseña";

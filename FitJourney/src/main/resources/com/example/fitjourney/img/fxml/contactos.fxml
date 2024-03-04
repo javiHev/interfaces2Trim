@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="pagPrincipal" prefHeight="672.0" prefWidth="1014.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fitjourney.ControllerNotas">
+<AnchorPane fx:id="pagPrincipal" prefHeight="672.0" prefWidth="1014.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fitjourney.ControllerContactos">
    <children>
       <TableView layoutX="146.0" layoutY="39.0" prefHeight="505.0" prefWidth="722.0" stylesheets="@../../../../../style/contactos.css" />
       <Button layoutX="245.0" layoutY="579.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="155.0" text="Ver">

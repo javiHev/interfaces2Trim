@@ -14,12 +14,12 @@
    <children>
       <VBox alignment="BASELINE_CENTER" prefHeight="672.0" prefWidth="173.0" stylesheets="@../../../../../style/estilo.css">
          <children>
-            <ImageView fx:id="home" fitHeight="57.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true" styleClass="image-view-style">
+            <ImageView fx:id="home" fitHeight="57.0" fitWidth="58.0" onMouseClicked="#handlerPrincipal" pickOnBounds="true" preserveRatio="true" styleClass="image-view-style">
                <image>
                   <Image url="@../logo_redondo.png" />
                </image>
             </ImageView>
-            <Button fx:id="btnProyectos" mnemonicParsing="false" prefHeight="47.0" prefWidth="161.0" styleClass="button-style" stylesheets="@../../../../../style/estilo.css" text="Proyectos  ">
+            <Button fx:id="btnProyectos" mnemonicParsing="false" onAction="#handlerProyectos" prefHeight="47.0" prefWidth="161.0" styleClass="button-style" stylesheets="@../../../../../style/estilo.css" text="Proyectos  ">
                <VBox.margin>
                   <Insets top="30.0" />
                </VBox.margin>
@@ -40,7 +40,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btnNotas" mnemonicParsing="false" prefHeight="47.0" prefWidth="174.0" styleClass="button-style" stylesheets="@../../../../../style/estilo.css" text="Notas        ">
+            <Button fx:id="btnNotas" mnemonicParsing="false" onAction="#handlerNotas" prefHeight="47.0" prefWidth="174.0" styleClass="button-style" stylesheets="@../../../../../style/estilo.css" text="Notas        ">
                <graphic>
                   <ImageView fitHeight="35.0" fitWidth="38.0" pickOnBounds="true">
                      <image>
@@ -49,7 +49,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btnContactos" mnemonicParsing="false" prefHeight="50.0" prefWidth="161.0" styleClass="button-style" stylesheets="@../../../../../style/estilo.css" text="Contactos ">
+            <Button fx:id="btnContactos" mnemonicParsing="false" onAction="#handlerContactos" prefHeight="50.0" prefWidth="161.0" styleClass="button-style" stylesheets="@../../../../../style/estilo.css" text="Contactos ">
                <graphic>
                   <ImageView fitHeight="35.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -58,7 +58,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btnLogout" mnemonicParsing="false" prefHeight="58.0" prefWidth="316.0" styleClass="button-style" stylesheets="@../../../../../style/estilo.css" text=" Logout  ">
+            <Button fx:id="btnLogout" mnemonicParsing="false" onAction="#handlerLogout" prefHeight="58.0" prefWidth="316.0" styleClass="button-style" stylesheets="@../../../../../style/estilo.css" text=" Logout  ">
                <VBox.margin>
                   <Insets top="290.0" />
                </VBox.margin>
