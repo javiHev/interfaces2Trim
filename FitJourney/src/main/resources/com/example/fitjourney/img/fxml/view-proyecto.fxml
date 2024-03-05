@@ -5,15 +5,15 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="pagPrincipal" prefHeight="672.0" prefWidth="1014.0" styleClass="anchor-pane" stylesheets="@../../../../../style/proyectos.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="pagPrincipal" prefHeight="672.0" prefWidth="1014.0" styleClass="anchor-pane" stylesheets="@../../../../../style/proyectos.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fitjourney.VistaProyecto">
    <children>
       <AnchorPane layoutX="652.0" layoutY="88.0" prefHeight="470.0" prefWidth="330.0" styleClass="anchor-pane-style" stylesheets="@../../../../../style/proyectos.css">
          <children>
-            <Label layoutX="93.0" layoutY="47.0" styleClass="label-proyectName" stylesheets="@../../../../../style/proyectos.css" text="Proyectos" />
+            <Label fx:id="nombreProyecto" layoutX="93.0" layoutY="47.0" styleClass="label-proyectName" stylesheets="@../../../../../style/proyectos.css" text="Proyectos" />
             <Label layoutX="14.0" layoutY="104.0" styleClass="label-proyectName" stylesheets="@../../../../../style/proyectos.css" text="Tareas:" />
-            <Label layoutX="66.0" layoutY="183.0" styleClass="label-tareaName" stylesheets="@../../../../../style/proyectos.css" text="Tarea1" />
-            <Label layoutX="66.0" layoutY="228.0" styleClass="label-tareaName" stylesheets="@../../../../../style/proyectos.css" text="Tarea 2" />
-            <Label layoutX="66.0" layoutY="280.0" styleClass="label-tareaName" stylesheets="@../../../../../style/proyectos.css" text="Tarea 3" />
+            <Label fx:id="tarea1" layoutX="66.0" layoutY="183.0" styleClass="label-tareaName" stylesheets="@../../../../../style/proyectos.css" text="Tarea1" />
+            <Label fx:id="tarea2" layoutX="66.0" layoutY="228.0" styleClass="label-tareaName" stylesheets="@../../../../../style/proyectos.css" text="Tarea 2" />
+            <Label fx:id="tarea3" layoutX="66.0" layoutY="280.0" styleClass="label-tareaName" stylesheets="@../../../../../style/proyectos.css" text="Tarea 3" />
             <ImageView fitHeight="406.0" fitWidth="444.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../icons/img_10.png" />

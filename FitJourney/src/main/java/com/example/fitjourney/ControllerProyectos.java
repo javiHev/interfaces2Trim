@@ -20,6 +20,7 @@ public class ControllerProyectos {
 
 
 
+
     public void recibirData(DatosProyectos creados) {
         this.datosProyectos=creados;
     }
@@ -36,37 +37,38 @@ public class ControllerProyectos {
     private GridPane rellenar;
     private int numeroPagina;
     private int paginasTotales;
-    private int librosXpagina = 6;
+    private int proyectosXpagina = 6;
 
-    static List<DatosProyectos> listaProyectos=new ArrayList<>();
+    /*static List<Proyectos> listaProyectos=new ArrayList<>();*/
     private DatosProyectos datosProyectos=PagPrincipal.getCreados();
 
 
-    public static void addProyectToList(DatosProyectos proyecto) {
+/*    public static void addProyectToList(Proyectos proyecto) {
         listaProyectos.add(proyecto);
         System.out.println("Proyecto: " + proyecto.getNombre() );
-        for (P)
-        System.out.println("Tareas");
-    }
+        int i=1;
+        for(String tarea:proyecto.getTareas()){
+            System.out.println("Tareas"+i+": "+tarea);
+            i++;
+        }
 
-    public void crearLibros() throws IOException {
+    }*/
+
+    public void crearProyectos() throws IOException {
         int y = 0;
         this.rellenar.setHgap(10);
         this.rellenar.setVgap(10);
 
-        for(int i = librosXpagina * numeroPagina; i < librosXpagina * (numeroPagina + 1) && i < this.librosCreados.getLibros().size(); i++){
+        for(int i = proyectosXpagina * numeroPagina; i < proyectosXpagina * (numeroPagina + 1) && i < DatosProyectos.getListaProyectos().size(); i++){
             System.out.println(i);
             AnchorPane anchorPane = new AnchorPane();
-            anchorPane.setId(this.librosCreados.getLibros().get(i).getNombre());
+            anchorPane.setId(DatosProyectos.getListaProyectos().get(i).getNombre());
 
 
             anchorPane.getStyleClass().add("cadaAnchor");
 
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("cadalibro.fxml"), LenguageManager.getInstance().getBundle());
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/example/fitjourney/img/fxml/cada-proyecto.fxml"));
             Parent root = fxmlLoader.load();
-
-            SoloUnLibro controllerCadaLibro = fxmlLoader.getController();
-            controllerCadaLibro.recibirData(this.librosCreados,this.librosCreados.getLibros().get(i));
             anchorPane.getChildren().setAll(root);
 
 
@@ -90,21 +92,18 @@ public class ControllerProyectos {
 
 
     @FXML
-    public void cambiarVista(Libro libroSeleccionado) {
+    public void cambiarVista(Proyectos proyectoSeleccionado) {
         try {
-            if (libroSeleccionado != null) {
-                // Obtiene el ResourceBundle del LenguageManager
-                ResourceBundle bundle = LenguageManager.getInstance().getBundle();
-
+            if (proyectoSeleccionado != null) {
                 // Carga el archivo FXML y pasa el ResourceBundle
-                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("vistalibro.fxml"), LenguageManager.getInstance().getBundle());
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("com/example/fitjourney/img/fxml/view-proyecto.fxml"));
                 Parent root = fxmlLoader.load();
-                VistaLibro vistaLibro = fxmlLoader.getController();
-                vistaLibro.setVistaOrigen("libros.fxml");
-                vistaLibro.recibirData(this.librosCreados);
-                this.librosCreados.getControllers().getControllerPagPrincipal().cambiarStage(root);
+                VistaProyecto vistaProyecto=fxmlLoader.getController();
+                vistaProyecto.setVistaOrigen("/com/example/fitjourney/img/fxml/proyectos.fxml");
+                vistaProyecto.recibirData(this.datosProyectos);
+                DatosProyectos.getControllers().getControllerPagPrincipal().cambiarStage(root);
             } else {
-                mostrarAlertaError("Tienes que seleccionar algún libro");
+                mostrarAlertaError("Tienes que seleccionar algún proyecto");
             }
         } catch (IOException e) {
             mostrarAlertaError("Error al cargar la vista del libro: " + e.getMessage());
@@ -128,26 +127,26 @@ public class ControllerProyectos {
     }
     @FXML
     void anterior(MouseEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("libros.fxml"), LenguageManager.getInstance().getBundle());
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/example/fitjourney/img/fxml/proyectos.fxml"));
         Parent root = fxmlLoader.load();
-        Libros controllerLibros = fxmlLoader.getController();
-        controllerLibros.establecerDatos(this.librosCreados,this.numeroPagina - 1);
-        this.librosCreados.getControllers().getControllerPagPrincipal().cambiarContenido(root);
+        ControllerProyectos controllerProyectos = fxmlLoader.getController();
+        controllerProyectos.establecerDatos(this.datosProyectos,this.numeroPagina - 1);
+        DatosProyectos.getControllers().getControllerPagPrincipal().cambiarContenido(root);
     }
 
     @FXML
     void siguiente(MouseEvent event) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("libros.fxml"), LenguageManager.getInstance().getBundle());
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/example/fitjourney/img/fxml/proyectos.fxml"));
         Parent root = fxmlLoader.load();
-        Libros controllerLibros = fxmlLoader.getController();
-        controllerLibros.establecerDatos(this.librosCreados,this.numeroPagina + 1);
-        this.librosCreados.getControllers().getControllerPagPrincipal().cambiarContenido(root);
+        ControllerProyectos controllerProyectos = fxmlLoader.getController();
+        controllerProyectos.establecerDatos(this.datosProyectos,this.numeroPagina + 1);
+        DatosProyectos.getControllers().getControllerPagPrincipal().cambiarContenido(root);
     }
-    public void establecerDatos(LibrosCreados creados, int pagina) throws IOException {
-        this.librosCreados = creados;
+    public void establecerDatos(DatosProyectos creados, int pagina) throws IOException {
+        this.datosProyectos = creados;
         this.numeroPagina = pagina;
-        this.paginasTotales = (int) (double) (this.librosCreados.getLibros().size() / this.librosXpagina);
+        this.paginasTotales = (int) (double) (DatosProyectos.getListaProyectos().size() / this.proyectosXpagina);
         if((double) this.numeroPagina <= 0){
             this.btnAnterior.setDisable(true);
         }
@@ -156,7 +155,7 @@ public class ControllerProyectos {
         }
         System.out.println(this.numeroPagina);
         System.out.println(this.paginasTotales);
-        this.crearLibros();
+        this.crearProyectos();
 
     }
 }

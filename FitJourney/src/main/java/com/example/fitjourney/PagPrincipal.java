@@ -142,45 +142,10 @@ public class PagPrincipal  {
         this.userName.setText("Bienvenido "+s+"!!");
     }
 
-    /*public void eliminarEstilos(){
-        this.main.getStylesheets().clear();
-    }
-    public void meterEstilo(String ruta){
-        this.main.getStylesheets().add(getClass().getResource(ruta).toExternalForm());
-    }*/
-   /* public void establecerDatos(LibrosCreados creados) throws IOException {
-        this.creados = creados;
-        this.creados.getControllers().setControllerPanelPrincipal(this);
-
-    }
-
-*/
-   /* public void actualizarIdioma(ResourceBundle bundle) {
-        // Actualizar los textos en esta instancia si no te deslogueas
-        addBook.setText(bundle.getString("principal.add_book"));
-        books.setText(bundle.getString("principal.books"));
-        detail_view.setText(bundle.getString("principal.detailed_view"));
-        user.setText(bundle.getString("principal.user"));
-        configuration.setText(bundle.getString("principal.settings"));
-        saludo.setText(bundle.getString("principal.welcome_user_message"));
-        welcome_message.setText(bundle.getString("principal.welcome_message"));
+    public void establecerDatos(DatosProyectos datosProyectos) {
+        PagPrincipal.datosProyectos = datosProyectos;
+        DatosProyectos.getControllers().setControllerPanelPrincipal(this);
     }
 
 
-    public void meterEstilo(String s) {
-        URL url = getClass().getResource(s);
-        if (url != null) {
-            this.vboxPrincipal.getStylesheets().clear();
-            this.vboxPrincipal.getStylesheets().add(url.toExternalForm());
-        } else {
-            System.out.println("No se encontró el archivo CSS: " + s);
-        }
-    }
-    public static LibrosCreados getCreados(){
-        return creados;
-    }
-
-    public VBox getVboxPrincipal() {
-        return this.vboxPrincipal;
-    }*/
 }

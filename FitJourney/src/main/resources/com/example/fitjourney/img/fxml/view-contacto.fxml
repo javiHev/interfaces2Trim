@@ -8,11 +8,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
 
-<AnchorPane fx:id="pagPrincipal" prefHeight="672.0" prefWidth="1014.0" styleClass="anchor-pane" stylesheets="@../../../../../style/proyectos.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="pagPrincipal" prefHeight="672.0" prefWidth="1014.0" styleClass="anchor-pane-contacto" stylesheets="@../../../../../style/proyectos.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane layoutX="652.0" layoutY="88.0" prefHeight="470.0" prefWidth="330.0">
          <children>
-            <Label layoutX="97.0" layoutY="96.0" styleClass="label-proyectName" stylesheets="@../../../../../style/proyectos.css" text="Contacto" />
+            <Label layoutX="97.0" layoutY="96.0" styleClass="label-tareaName" stylesheets="@../../../../../style/proyectos.css" text="Contacto" />
             <Label layoutX="66.0" layoutY="170.0" styleClass="label-tareaName" stylesheets="@../../../../../style/proyectos.css" text="Nombre" />
             <Label layoutX="70.0" layoutY="245.0" styleClass="label-tareaName" stylesheets="@../../../../../style/proyectos.css" text="Email" />
             <Label layoutX="63.0" layoutY="291.0" styleClass="label-tareaName" stylesheets="@../../../../../style/proyectos.css" text="Telefono" />
@@ -31,7 +31,7 @@
                   <Image url="@../icons/img_15.png" />
                </image>
             </ImageView>
-            <Label layoutX="268.0" layoutY="414.0" prefHeight="88.0" prefWidth="49.0" styleClass="label-data" stylesheets="@../../../../../style/principal.css" text="..." />
+            <Label layoutX="268.0" layoutY="414.0" prefHeight="88.0" prefWidth="49.0" styleClass="label-tareaName" stylesheets="@../../../../../style/principal.css" text="..." />
             <ImageView fitHeight="88.0" fitWidth="145.0" layoutX="75.0" layoutY="-46.0" pickOnBounds="true" preserveRatio="true" />
             <Label layoutX="65.0" layoutY="209.0" styleClass="label-tareaName" stylesheets="@../../../../../style/proyectos.css" text="Apellido" />
             <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="38.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
@@ -39,7 +39,7 @@
                   <Image url="@../icons/img_3.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="406.0" fitWidth="444.0" layoutX="-5.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="422.0" fitWidth="331.0" layoutX="-5.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../icons/img_10.png" />
                </image>

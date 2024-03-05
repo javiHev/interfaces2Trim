@@ -9,6 +9,7 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.ResourceBundle;
 
 public class Login {
@@ -21,7 +22,10 @@ public class Login {
 
     @FXML
     private PasswordField userPassword;
+    private DatosProyectos datosProyectos=new DatosProyectos();
 
+    public Login() throws ParseException {
+    }
 
 
     @FXML
@@ -38,7 +42,7 @@ public class Login {
             Parent root = loader.load();
             PagPrincipal pagPrincipalController = loader.getController();
             pagPrincipalController.setUserName("@" + usuario);
-//            pagPrincipalController.establecerDatos(this.creados);
+            pagPrincipalController.establecerDatos(this.datosProyectos);
 
             Stage stage = (Stage) btnInicio.getScene().getWindow();
             stage.setTitle("FitJourney");

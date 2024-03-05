@@ -21,3 +21,6 @@
 .anchor-pane {
     -fx-background-color: linear-gradient(to right, #FFFFFF, #43C07A);
 }
+.anchor-pane-contacto {
+    -fx-background-color: linear-gradient(to right, #FFFFFF, #1A717D);
+}
