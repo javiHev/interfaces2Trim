@@ -8,6 +8,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import model.LenguageManager;
 import model.LibrosCreados;
@@ -15,6 +17,7 @@ import org.example.bibliogest_javihevia.HelloApplication;
 
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ResourceBundle;
 
 public class VistaLibro {
@@ -24,6 +27,8 @@ public class VistaLibro {
     private Label tituloLibro;
     @FXML
     private Button volver;
+    @FXML
+    private ImageView imagenLibro;
     private String vistaOrigen;
 
 
@@ -67,4 +72,6 @@ public class VistaLibro {
     public void recibirData(LibrosCreados creado) {
         this.creados=creado;
     }
+
+
 }

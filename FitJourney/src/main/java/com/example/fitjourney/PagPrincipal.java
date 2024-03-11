@@ -80,7 +80,7 @@ public class PagPrincipal  {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/example/fitjourney/img/fxml/proyectos.fxml"));
         Parent root = fxmlLoader.load();
         ControllerProyectos controllerProyectos = fxmlLoader.getController();
-        controllerProyectos.recibirData(this.datosProyectos);
+        controllerProyectos.recibirData(datosProyectos);
 
         cambiarStage(root);
 

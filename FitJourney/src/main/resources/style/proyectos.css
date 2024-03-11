@@ -7,7 +7,7 @@
  -fx-font-family: 'Roboto Condensed', sans-serif; /* Asegúrate de que la fuente esté instalada o cargada en tu proyecto */
      -fx-font-weight: bold; /* Roboto Condensed Bold */
      -fx-font-style: italic; /* Itálico */
-     -fx-font-size: 30px; /* Tamaño de fuente 24 */
+     -fx-font-size: 22px; /* Tamaño de fuente 24 */
      -fx-text-fill: #FFFFFF;
 }
 .label-tareaName{

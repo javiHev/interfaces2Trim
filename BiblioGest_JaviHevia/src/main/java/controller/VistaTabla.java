@@ -29,7 +29,7 @@ public class VistaTabla{
     private TextField buscador;
     @FXML
     private Button buscar;
-
+    private VistaLibro vistaLibro;
 
     private PagPrincipal pagPrincipal;
     private LibrosCreados librosCreados=PagPrincipal.getCreados();;
@@ -84,6 +84,9 @@ public class VistaTabla{
                 FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("vistalibro.fxml"), LenguageManager.getInstance().getBundle());
                 Parent root = fxmlLoader.load();
                 VistaLibro vistaLibro = fxmlLoader.getController();
+                vistaLibro.setTituloLibro(libroSeleccionado.getNombre());
+                vistaLibro.setAutorLibro(libroSeleccionado.getAutor());
+
                 vistaLibro.setVistaOrigen("vistatabla.fxml");
                 vistaLibro.recibirData(this.librosCreados);
                 this.librosCreados.getControllers().getControllerPagPrincipal().cambiarStage(root);

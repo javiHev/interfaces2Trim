@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="900.0" prefWidth="958.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Libros">
+<AnchorPane prefHeight="900.0" prefWidth="887.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Libros">
    <children>
-      <Button fx:id="btnSiguiente" layoutX="660.0" layoutY="761.0" mnemonicParsing="false" onMouseClicked="#siguiente" prefHeight="57.0" prefWidth="100.0" stylesheets="@../../../styles/login.css" text="&gt;" />
-      <Button fx:id="btnAnterior" layoutX="199.0" layoutY="761.0" mnemonicParsing="false" onMouseClicked="#anterior" prefHeight="57.0" prefWidth="100.0" stylesheets="@../../../styles/login.css" text="&lt;" />
-      <Label fx:id="pagina" layoutX="425.0" layoutY="761.0" prefHeight="57.0" prefWidth="100.0" styleClass="text-font" stylesheets="@../../../styles/login.css" text="Label" />
-      <GridPane fx:id="rellenar" layoutY="-2.0" prefHeight="677.0" prefWidth="958.0">
+      <Button fx:id="btnSiguiente" layoutX="745.0" layoutY="828.0" mnemonicParsing="false" onMouseClicked="#siguiente" prefHeight="58.0" prefWidth="70.0" styleClass="boton" stylesheets="@../../../styles/login.css" text="&gt;">
+         <font>
+            <Font size="26.0" />
+         </font></Button>
+      <GridPane fx:id="rellenar" layoutX="38.0" layoutY="14.0" prefHeight="699.0" prefWidth="830.0">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
          </columnConstraints>
@@ -20,5 +21,10 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
       </GridPane>
+      <Button fx:id="btnAnterior" layoutX="110.0" layoutY="828.0" mnemonicParsing="false" onMouseClicked="#anterior" prefHeight="48.0" prefWidth="70.0" styleClass="boton" stylesheets="@../../../styles/login.css" text="&lt;">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

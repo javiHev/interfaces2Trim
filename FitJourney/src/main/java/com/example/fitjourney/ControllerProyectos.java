@@ -7,23 +7,20 @@ import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class ControllerProyectos {
 
+    @FXML
+    private ImageView addProyect;
 
-
-
-    public void recibirData(DatosProyectos creados) {
-        this.datosProyectos=creados;
-    }
     @FXML
     private Button btnAnterior;
 
@@ -31,85 +28,61 @@ public class ControllerProyectos {
     private Button btnSiguiente;
 
     @FXML
-    private Label pagina;
+    private AnchorPane pagPrincipal;
+
+
 
     @FXML
     private GridPane rellenar;
-    private int numeroPagina;
+    private int numeroPagina=0;
     private int paginasTotales;
     private int proyectosXpagina = 6;
-
-    /*static List<Proyectos> listaProyectos=new ArrayList<>();*/
-    private DatosProyectos datosProyectos=PagPrincipal.getCreados();
-
-
-/*    public static void addProyectToList(Proyectos proyecto) {
-        listaProyectos.add(proyecto);
-        System.out.println("Proyecto: " + proyecto.getNombre() );
-        int i=1;
-        for(String tarea:proyecto.getTareas()){
-            System.out.println("Tareas"+i+": "+tarea);
-            i++;
-        }
-
-    }*/
-
-    public void crearProyectos() throws IOException {
-        int y = 0;
-        this.rellenar.setHgap(10);
-        this.rellenar.setVgap(10);
-
-        for(int i = proyectosXpagina * numeroPagina; i < proyectosXpagina * (numeroPagina + 1) && i < DatosProyectos.getListaProyectos().size(); i++){
-            System.out.println(i);
-            AnchorPane anchorPane = new AnchorPane();
-            anchorPane.setId(DatosProyectos.getListaProyectos().get(i).getNombre());
-
-
-            anchorPane.getStyleClass().add("cadaAnchor");
-
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/example/fitjourney/img/fxml/cada-proyecto.fxml"));
-            Parent root = fxmlLoader.load();
-            anchorPane.getChildren().setAll(root);
-
-
-            int fila = y / 4;
-            int columna = y % 4;
-            Insets margin = new Insets(10, 10, 10, 10);
-            GridPane.setMargin(anchorPane, margin);
-            GridPane.setFillHeight(anchorPane,false);
-            GridPane.setFillWidth(anchorPane,false);
-            this.rellenar.setPrefSize(800,600);
-
-            GridPane.setConstraints(anchorPane,columna,fila);
-            this.rellenar.getChildren().add(anchorPane);
-            y++;
-        }
-        this.rellenar.setLayoutX(70);
-        this.rellenar.setLayoutY(70);
-
-    }
+    private DatosProyectos datosProyectos = PagPrincipal.getCreados();
 
 
 
     @FXML
-    public void cambiarVista(Proyectos proyectoSeleccionado) {
+    public void initialize() {
+        inicializarVista();
         try {
-            if (proyectoSeleccionado != null) {
-                // Carga el archivo FXML y pasa el ResourceBundle
-                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("com/example/fitjourney/img/fxml/view-proyecto.fxml"));
-                Parent root = fxmlLoader.load();
-                VistaProyecto vistaProyecto=fxmlLoader.getController();
-                vistaProyecto.setVistaOrigen("/com/example/fitjourney/img/fxml/proyectos.fxml");
-                vistaProyecto.recibirData(this.datosProyectos);
-                DatosProyectos.getControllers().getControllerPagPrincipal().cambiarStage(root);
-            } else {
-                mostrarAlertaError("Tienes que seleccionar algún proyecto");
-            }
+            establecerDatos(datosProyectos, numeroPagina); // datosProyectos ya está inicializado
         } catch (IOException e) {
-            mostrarAlertaError("Error al cargar la vista del libro: " + e.getMessage());
             e.printStackTrace();
+            mostrarAlertaError("Error al inicializar la vista de Proyectos.");
         }
     }
+    private void inicializarVista() {
+        rellenar.setHgap(10);
+        rellenar.setVgap(10);
+        rellenar.setLayoutX(70);
+        rellenar.setLayoutY(70);
+    }
+    public void crearProyectos() throws IOException {
+        rellenar.getChildren().clear();
+
+        for (int i = proyectosXpagina * numeroPagina, y = 0; i < proyectosXpagina * (numeroPagina + 1) && i < datosProyectos.getListaProyectos().size(); i++, y++) {
+            System.out.println(i);
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/example/fitjourney/img/fxml/cada-proyecto.fxml"));
+            Parent root = fxmlLoader.load();
+            ControllerCadaProyecto controllerCadaProyecto = fxmlLoader.getController();
+            controllerCadaProyecto.recibirData(this.datosProyectos, this.datosProyectos.getListaProyectos().get(i));
+
+            AnchorPane anchorPane = new AnchorPane();
+            anchorPane.setPrefSize(234.0, 189.0); // Estos valores deben coincidir con los del FXML de cada proyecto
+            anchorPane.getChildren().setAll(root);
+            anchorPane.getStyleClass().add("cadaAnchor");
+
+            // Ajusta los márgenes y la posición en el GridPane
+            GridPane.setMargin(anchorPane, new Insets(10)); // Ajusta el margen según necesites
+            GridPane.setConstraints(anchorPane, y % 3, y / 3); // Asegúrate de que esta configuración evite la superposición
+
+            rellenar.getChildren().add(anchorPane);
+        }
+
+
+    }
+
+
     public void mostrarAlertaError(String mensaje) {
         Alert alerta = new Alert(Alert.AlertType.ERROR);
         alerta.setTitle("Error");
@@ -117,40 +90,31 @@ public class ControllerProyectos {
         alerta.setContentText(mensaje);
         alerta.showAndWait();
     }
-    public void mostrarAlertaAceptar(String titulo,String head,String contenido){
-        Alert alert=new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle(titulo);
-        alert.setHeaderText(null);
-        alert.setHeaderText(head);
-        alert.setContentText(contenido);
-        alert.showAndWait();
-    }
+
+
     @FXML
-    void anterior(MouseEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/example/fitjourney/img/fxml/proyectos.fxml"));
-        Parent root = fxmlLoader.load();
-        ControllerProyectos controllerProyectos = fxmlLoader.getController();
-        controllerProyectos.establecerDatos(this.datosProyectos,this.numeroPagina - 1);
-        DatosProyectos.getControllers().getControllerPagPrincipal().cambiarContenido(root);
+    void anterior() throws IOException {
+        if (numeroPagina > 0) {
+            establecerDatos(datosProyectos, numeroPagina - 1);
+        }
     }
 
     @FXML
-    void siguiente(MouseEvent event) throws IOException {
-
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/example/fitjourney/img/fxml/proyectos.fxml"));
-        Parent root = fxmlLoader.load();
-        ControllerProyectos controllerProyectos = fxmlLoader.getController();
-        controllerProyectos.establecerDatos(this.datosProyectos,this.numeroPagina + 1);
-        DatosProyectos.getControllers().getControllerPagPrincipal().cambiarContenido(root);
+    void siguiente() throws IOException {
+        if (numeroPagina < paginasTotales - 1) {
+            establecerDatos(datosProyectos, numeroPagina + 1);
+        }
     }
+
+
     public void establecerDatos(DatosProyectos creados, int pagina) throws IOException {
         this.datosProyectos = creados;
         this.numeroPagina = pagina;
         this.paginasTotales = (int) (double) (DatosProyectos.getListaProyectos().size() / this.proyectosXpagina);
-        if((double) this.numeroPagina <= 0){
+        if ((double) this.numeroPagina <= 0) {
             this.btnAnterior.setDisable(true);
         }
-        if((double) this.numeroPagina>= this.paginasTotales){
+        if ((double) this.numeroPagina >= this.paginasTotales) {
             this.btnSiguiente.setDisable(true);
         }
         System.out.println(this.numeroPagina);
@@ -158,4 +122,11 @@ public class ControllerProyectos {
         this.crearProyectos();
 
     }
+
+    public void recibirData(DatosProyectos creados) {
+        this.datosProyectos=creados;
+    }
 }
+
+
+

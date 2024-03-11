@@ -1,6 +1,8 @@
 package com.example.fitjourney;
 
 
+
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -9,6 +11,9 @@ import java.util.List;
 
 public class DatosProyectos {
 
+
+    private Proyectos proyectoSeleccionado;
+    private Boolean vistaAnteriorTabla;
 
     public DatosProyectos() throws ParseException {
 
@@ -58,4 +63,13 @@ public class DatosProyectos {
     public static Controller getControllers() {
         return controllers;
     }
+
+    public Proyectos getProyectoSeleccionado(){return this.proyectoSeleccionado;}
+    public void setProyectoSeleccionado(Proyectos proyectoSeleccionado) {
+        this.proyectoSeleccionado = proyectoSeleccionado;
+    }
+    public void setVistaAnterior(Boolean vistaAnterior) {
+        this.vistaAnteriorTabla = vistaAnterior;
+    }
+
 }

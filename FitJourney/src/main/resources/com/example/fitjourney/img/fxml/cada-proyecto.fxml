@@ -5,14 +5,18 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="332.0" prefWidth="291.0" styleClass="anchor-pane-style" stylesheets="@../../../../../style/proyectos.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fitjourney.ControllerProyectos">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fitjourney.ControllerCadaProyecto">
    <children>
-      <ImageView fitHeight="200.0" fitWidth="302.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../icons/img_9.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="29.0" layoutY="64.0" styleClass="label-proyectName" stylesheets="@../../../../../style/proyectos.css" text="Nombre Proyecto" />
+      <AnchorPane layoutX="4.0" maxHeight="215.0" maxWidth="270.0" minHeight="189.0" minWidth="200.0" onMouseClicked="#ver" prefHeight="189.0" prefWidth="234.0" styleClass="anchor-pane-style" stylesheets="@../../../../../style/proyectos.css">
+         <children>
+            <ImageView fitHeight="175.0" fitWidth="233.0" layoutX="-4.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/img_9.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="proyectName" layoutX="8.0" layoutY="13.0" styleClass="label-proyectName" stylesheets="@../../../../../style/proyectos.css" text="Nombre Proyecto" />
+            <AnchorPane layoutX="-356.0" layoutY="-178.0" prefHeight="200.0" prefWidth="200.0" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

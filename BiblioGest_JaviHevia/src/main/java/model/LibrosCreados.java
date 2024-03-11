@@ -17,29 +17,29 @@ public class LibrosCreados {
 
 
         public LibrosCreados() {
-            this.libros.add(new Libro("9780307474728", "Cien Años de Soledad", "Gabriel García Márquez", "1967"));
-            this.libros.add(new Libro("9780451524935", "1984", "George Orwell", "1949"));
-            this.libros.add(new Libro("9780156012195", "El Principito", "Antoine de Saint-Exupéry", "1943"));
-            this.libros.add(new Libro("9788423353385", "Don Quijote de la Mancha", "Miguel de Cervantes", "1605"));
-            this.libros.add(new Libro("9780061120084", "To Kill a Mockingbird", "Harper Lee", "1960"));
-            this.libros.add(new Libro("9780345339683", "El Hobbit", "J.R.R. Tolkien", "1937"));
-            this.libros.add(new Libro("9780679783268", "Orgullo y Prejuicio", "Jane Austen", "1813"));
-            this.libros.add(new Libro("9788491392255", "Matar a un Ruiseñor", "Harper Lee", "1960"));
-            this.libros.add(new Libro("9780743273565", "El Gran Gatsby", "F. Scott Fitzgerald", "1925"));
-            this.libros.add(new Libro("9780747532743", "Harry Potter y la Piedra Filosofal", "J.K. Rowling", "1997"));
-            this.libros.add(new Libro("9780307474278", "El Código Da Vinci", "Dan Brown", "2003"));
+            this.libros.add(new Libro("9780307474728", "Cien Años de Soledad", "Gabriel García Márquez", "1967","src/main/resources/img/default.png"));
+            this.libros.add(new Libro("9780451524935", "1984", "George Orwell", "1949","src/main/resources/img/default.png"));
+            this.libros.add(new Libro("9780156012195", "El Principito", "Antoine de Saint-Exupéry", "1943","src/main/resources/img/default.png"));
+            this.libros.add(new Libro("9788423353385", "Don Quijote de la Mancha", "Miguel de Cervantes", "1605","src/main/resources/img/default.png"));
+            this.libros.add(new Libro("9780061120084", "To Kill a Mockingbird", "Harper Lee", "1960","src/main/resources/img/default.png"));
+            this.libros.add(new Libro("9780345339683", "El Hobbit", "J.R.R. Tolkien", "1937","src/main/resources/img/default.png"));
+            this.libros.add(new Libro("9780679783268", "Orgullo y Prejuicio", "Jane Austen", "1813","src/main/resources/img/default.png"));
+            this.libros.add(new Libro("9788491392255", "Matar a un Ruiseñor", "Harper Lee", "1960","src/main/resources/img/default.png"));
+            this.libros.add(new Libro("9780743273565", "El Gran Gatsby", "F. Scott Fitzgerald", "1925","src/main/resources/img/default.png"));
+            this.libros.add(new Libro("9780747532743", "Harry Potter y la Piedra Filosofal", "J.K. Rowling", "1997","src/main/resources/img/default.png"));
+            this.libros.add(new Libro("9780307474278", "El Código Da Vinci", "Dan Brown", "2003","src/main/resources/img/default.png"));
 
-            Libros.addBookToList(new Libro("9780307474728", "Cien Años de Soledad", "Gabriel García Márquez", "1967"));
-            Libros.addBookToList(new Libro("9780451524935", "1984", "George Orwell", "1949"));
-            Libros.addBookToList(new Libro("9780156012195", "El Principito", "Antoine de Saint-Exupéry", "1943"));
-            Libros.addBookToList(new Libro("9788423353385", "Don Quijote de la Mancha", "Miguel de Cervantes", "1605"));
-            Libros.addBookToList(new Libro("9780061120084", "To Kill a Mockingbird", "Harper Lee", "1960"));
-            Libros.addBookToList(new Libro("9780345339683", "El Hobbit", "J.R.R. Tolkien", "1937"));
-            Libros.addBookToList(new Libro("9780679783268", "Orgullo y Prejuicio", "Jane Austen", "1813"));
-            Libros.addBookToList(new Libro("9788491392255", "Matar a un Ruiseñor", "Harper Lee", "1960"));
-            Libros.addBookToList(new Libro("9780743273565", "El Gran Gatsby", "F. Scott Fitzgerald", "1925"));
-            Libros.addBookToList(new Libro("9780747532743", "Harry Potter y la Piedra Filosofal", "J.K. Rowling", "1997"));
-            Libros.addBookToList(new Libro("9780307474278", "El Código Da Vinci", "Dan Brown", "2003"));
+            Libros.addBookToList(new Libro("9780307474728", "Cien Años de Soledad", "Gabriel García Márquez", "1967","src/main/resources/img/default.png"));
+            Libros.addBookToList(new Libro("9780451524935", "1984", "George Orwell", "1949","src/main/resources/img/default.png"));
+            Libros.addBookToList(new Libro("9780156012195", "El Principito", "Antoine de Saint-Exupéry", "1943","src/main/resources/img/default.png"));
+            Libros.addBookToList(new Libro("9788423353385", "Don Quijote de la Mancha", "Miguel de Cervantes", "1605","src/main/resources/img/default.png"));
+            Libros.addBookToList(new Libro("9780061120084", "To Kill a Mockingbird", "Harper Lee", "1960","src/main/resources/img/default.png"));
+            Libros.addBookToList(new Libro("9780345339683", "El Hobbit", "J.R.R. Tolkien", "1937","src/main/resources/img/default.png"));
+            Libros.addBookToList(new Libro("9780679783268", "Orgullo y Prejuicio", "Jane Austen", "1813","src/main/resources/img/default.png"));
+            Libros.addBookToList(new Libro("9788491392255", "Matar a un Ruiseñor", "Harper Lee", "1960","src/main/resources/img/default.png"));
+            Libros.addBookToList(new Libro("9780743273565", "El Gran Gatsby", "F. Scott Fitzgerald", "1925","src/main/resources/img/default.png"));
+            Libros.addBookToList(new Libro("9780747532743", "Harry Potter y la Piedra Filosofal", "J.K. Rowling", "1997","src/main/resources/img/default.png"));
+            Libros.addBookToList(new Libro("9780307474278", "El Código Da Vinci", "Dan Brown", "2003","src/main/resources/img/default.png"));
 
         }
 

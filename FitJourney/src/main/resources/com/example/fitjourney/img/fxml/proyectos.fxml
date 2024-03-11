@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -9,7 +10,7 @@
 
 <AnchorPane fx:id="pagPrincipal" prefHeight="672.0" prefWidth="1014.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fitjourney.ControllerProyectos">
    <children>
-      <GridPane fx:id="rellenar" layoutX="-1.0" prefHeight="585.0" prefWidth="1014.0">
+      <GridPane fx:id="rellenar" layoutX="23.0" maxHeight="543.0" maxWidth="969.0" prefHeight="543.0" prefWidth="969.0" style="-fx-background-color: #00000;">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
          </columnConstraints>
@@ -17,10 +18,12 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
       </GridPane>
-      <ImageView fitHeight="67.0" fitWidth="77.0" layoutX="923.0" layoutY="591.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="addProyect" fitHeight="67.0" fitWidth="77.0" layoutX="923.0" layoutY="591.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../icons/img_8.png" />
          </image>
       </ImageView>
+      <Button fx:id="btnSiguiente" layoutX="595.0" layoutY="585.0" mnemonicParsing="false" onMouseClicked="#siguiente" prefHeight="57.0" prefWidth="100.0" stylesheets="@../../../../../style/editView.css" text="&gt;" />
+      <Button fx:id="btnAnterior" layoutX="337.0" layoutY="585.0" mnemonicParsing="false" onMouseClicked="#anterior" prefHeight="57.0" prefWidth="100.0" stylesheets="@../../../../../style/editView.css" text="&lt;" />
    </children>
 </AnchorPane>

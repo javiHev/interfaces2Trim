@@ -6,13 +6,15 @@ public class Libro {
     private String isbn;
     private String nombre;
     private String autor;
+    private String imagen;
     private String year;
 
-    public Libro(String isbn, String nombre, String autor, String year) {
+    public Libro(String isbn, String nombre, String autor, String year, String imagen) {
         this.isbn = isbn;
         this.nombre = nombre;
         this.autor = autor;
         this.year = year;
+        this.imagen=imagen;
     }
     @Override
     public boolean equals(Object obj) {
@@ -58,7 +60,13 @@ public class Libro {
         this.autor = autor;
     }
 
-    public void setAño(String year) {
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+
+    public void setYear(String year) {
         this.year = year;
     }
+
+    public String getImagen() {return imagen;}
 }
