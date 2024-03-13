@@ -24,3 +24,20 @@
 .anchor-pane-contacto {
     -fx-background-color: linear-gradient(to right, #FFFFFF, #1A717D);
 }
+.button-style {
+    -fx-background-color: linear-gradient(to bottom, #18244A 0%, #1A717D 100%);
+    -fx-background-radius: 20;
+    -fx-text-fill: white; /* Ajusta el color del texto según necesites */
+    -fx-padding: 5 10; /* Ajusta el relleno según necesites */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.6), 5, 0, 0, 1); /* Opcional: añade una sombra */
+}
+
+/* Cambia el color al pasar el cursor */
+.button-style:hover {
+    -fx-background-color: linear-gradient(to bottom, #162038 0%, #19696d 100%);
+}
+
+/* Cambia el color al presionar el botón */
+.button-style:pressed {
+    -fx-background-color: linear-gradient(to bottom, #141C30 0%, #17575D 100%);
+}

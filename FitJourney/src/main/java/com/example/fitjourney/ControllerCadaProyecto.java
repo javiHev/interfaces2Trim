@@ -1,18 +1,26 @@
 package com.example.fitjourney;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class ControllerCadaProyecto {
     @FXML
-    private Label proyectName;
+    private Button proyectoBtn;
+    @FXML
+    private ImageView imageView;
     private DatosProyectos datosProyectos;
     private Proyectos proyecto;
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
     /*void cambiarVista(MouseEvent event) {
         try {
@@ -38,7 +46,7 @@ public class ControllerCadaProyecto {
         }
     }*/
     @FXML
-    void ver(MouseEvent event) {
+    void ver(ActionEvent event) {
         this.datosProyectos.setProyectoSeleccionado(this.proyecto);
         this.datosProyectos.setVistaAnterior(true);
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/example/fitjourney/img/fxml/view-proyecto.fxml"));
@@ -49,7 +57,11 @@ public class ControllerCadaProyecto {
             System.out.println(err.getMessage());
         }
         VistaProyecto controllerVistaProyecto =fxmlLoader.getController();
+        System.out.println("Proyecto escogido: "+this.proyecto.getNombre());
         controllerVistaProyecto.setNombreProyecto(this.proyecto.getNombre());
+        LocalDate date=this.proyecto.getFecha();
+        String fecha=date.format(formatter);
+        controllerVistaProyecto.setDateProyect(fecha);
         controllerVistaProyecto.setTareas(this.proyecto.getTareas());
         controllerVistaProyecto.establecerDatos(this.datosProyectos);
         controllerVistaProyecto.setVistaOrigen("/com/example/fitjourney/img/fxml/proyectos.fxml");
@@ -58,6 +70,8 @@ public class ControllerCadaProyecto {
     public void recibirData(DatosProyectos creados, Proyectos proyecto){
         this.datosProyectos=creados;
         this.proyecto = proyecto;
-        this.proyectName.setText(this.proyecto.getNombre());
+        this.proyectoBtn.setText(this.proyecto.getNombre());
+        this.imageView.setMouseTransparent(true);
     }
+
 }

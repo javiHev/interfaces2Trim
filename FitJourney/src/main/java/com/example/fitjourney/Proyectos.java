@@ -1,25 +1,26 @@
 package com.example.fitjourney;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-
 
 public class Proyectos {
     private String nombre;
-    private Date fecha;
-    private List<String> tareas=new ArrayList<>();
+    private LocalDate fecha; // Usar LocalDate en lugar de Date
+    private List<String> tareas = new ArrayList<>();
 
-    public Proyectos(String nombre, Date fecha, List<String> tareas) {
+
+    public Proyectos(String nombre, LocalDate fecha, List<String> tareas) {
         this.nombre = nombre;
         this.fecha = fecha;
         this.tareas = tareas;
     }
+
     public String getNombre() {
         return nombre;
     }
 
-    public Date getFecha() {
+    public LocalDate getFecha() { // Retorna un LocalDate
         return fecha;
     }
 
@@ -31,7 +32,7 @@ public class Proyectos {
         this.nombre = nombre;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(LocalDate fecha) { // Acepta un LocalDate
         this.fecha = fecha;
     }
 

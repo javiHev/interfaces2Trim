@@ -39,3 +39,23 @@
      -fx-font-size: 60px; /* Tamaño de fuente 24 */
      -fx-text-fill: #FFFFFF;
 }
+.scroll-pane{
+ -fx-background-color: #EEEEEE;
+}
+.scroll-bar {
+    -fx-background-color: #EEEEEE;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #47547A; /* Color del thumb (la barra que se desplaza) */
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: #FFFFFF; /* Fondo de los botones de incremento y decremento */
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+    -fx-background-color: #47547A; /* Color de las flechas */
+}
