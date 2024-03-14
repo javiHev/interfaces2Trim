@@ -14,8 +14,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
+
 
 public class PagPrincipal  {
 
@@ -57,6 +56,9 @@ public class PagPrincipal  {
 
     public static DatosProyectos getCreados() {
         return datosProyectos;
+    }
+    public static DatosNotas getNotasCreadas(){
+        return  datosNotas;
     }
     /*###############################################################################*/
    /* @Override
@@ -102,7 +104,7 @@ public class PagPrincipal  {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/example/fitjourney/img/fxml/notas.fxml"));
         Parent root = fxmlLoader.load();
         ControllerNotas controllerNotas = fxmlLoader.getController();
-        controllerNotas.recibirData(this.datosNotas);
+        controllerNotas.recibirData(datosNotas);
         cambiarStage(root);
     }
 
@@ -142,8 +144,9 @@ public class PagPrincipal  {
         this.userName.setText("Bienvenido "+s+"!!");
     }
 
-    public void establecerDatos(DatosProyectos datosProyectos) {
+    public void establecerDatos(DatosProyectos datosProyectos,DatosNotas datosNotas) {
         PagPrincipal.datosProyectos = datosProyectos;
+        PagPrincipal.datosNotas=datosNotas;
         DatosProyectos.getControllers().setControllerPanelPrincipal(this);
     }
 

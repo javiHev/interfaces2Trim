@@ -33,6 +33,7 @@ public class VistaProyecto {
     private Label tarea3;
     private DatosProyectos datosProyectos;
     private String vistaOrigen;
+    private Proyectos proyectoSeleccionado;
 
     public void setVistaOrigen(String origen) {
         this.vistaOrigen = origen;
@@ -99,6 +100,7 @@ public class VistaProyecto {
             controllerProyecto.setNombreProyecto(nombre);
             controllerProyecto.setVistaOrigen("/com/example/fitjourney/img/fxml/view-proyecto.fxml");
             controllerProyecto.setFechaEscogida(fechaProyecto.getText());
+            controllerProyecto.setProyectoSeleccionado(this.proyectoSeleccionado);
 
             Scene scene = new Scene(root);
             Stage nuevoStage = new Stage();
@@ -109,5 +111,9 @@ public class VistaProyecto {
         } catch (IOException err) {
             System.out.println(err.getMessage());
         }
+    }
+
+    public void setObjectProyecto(Proyectos proyecto) {
+        this.proyectoSeleccionado=proyecto;
     }
 }

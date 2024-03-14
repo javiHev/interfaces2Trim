@@ -1,0 +1,27 @@
+ .button {
+    -fx-padding: 20; /* Espacio alrededor del texto del botón */
+    -fx-background-color: #FFFFFF; /* Color de fondo del botón */
+    -fx-border-color: transparent; /* Color del borde del botón, se puede ajustar si se desea ver el borde */
+    -fx-background-radius: 0; /* Radio del borde del fondo del botón */
+    -fx-background-radius: 20;
+    -fx-alignment: center; /* Alineación del contenido del botón */
+    -fx-font-family: "Roboto Condensed Light"; /* Asegúrate de que la fuente Roboto Condensed Light esté disponible */
+            -fx-font-style: italic; /* Itálica */
+            -fx-font-size: 22px; /* Tamaño de la fuente */
+            -fx-text-fill: #18244A; /* Color del texto */
+
+}
+
+.button:hover {
+    -fx-background-color: #F0F0F0; /* Color de fondo del botón al pasar el ratón por encima */
+}
+
+.button:pressed {
+    -fx-background-color: #E0E0E0; /* Color de fondo del botón al ser presionado */
+}
+
+.anchor-pane{
+ -fx-background-color: transparent;
+}
+
+

@@ -4,23 +4,34 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Proyectos {
+    private static int contadorId = 0; // Variable estática para generar IDs
+    private int id; // ID único para cada instancia
     private String nombre;
-    private LocalDate fecha; // Usar LocalDate en lugar de Date
+    private LocalDate fecha;
     private List<String> tareas = new ArrayList<>();
 
-
     public Proyectos(String nombre, LocalDate fecha, List<String> tareas) {
+        this.id = ++contadorId; // Incrementa el contador y asigna el ID
         this.nombre = nombre;
         this.fecha = fecha;
         this.tareas = tareas;
+    }
+
+    // Getters y setters
+    public int getId() {
+        return id;
     }
 
     public String getNombre() {
         return nombre;
     }
 
-    public LocalDate getFecha() { // Retorna un LocalDate
+    public LocalDate getFecha() {
         return fecha;
     }
 
@@ -32,7 +43,7 @@ public class Proyectos {
         this.nombre = nombre;
     }
 
-    public void setFecha(LocalDate fecha) { // Acepta un LocalDate
+    public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
     }
 

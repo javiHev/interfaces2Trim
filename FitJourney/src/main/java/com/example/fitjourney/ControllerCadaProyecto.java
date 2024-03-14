@@ -22,29 +22,7 @@ public class ControllerCadaProyecto {
     private Proyectos proyecto;
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
-    /*void cambiarVista(MouseEvent event) {
-        try {
-            if (this.proyecto != null) {
 
-
-                // Carga el archivo FXML y pasa el ResourceBundle
-                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/example/fitjourney/img/fxml/view-proyecto.fxml"));
-                Parent root = fxmlLoader.load();
-                VistaProyecto vistaLibro = fxmlLoader.getController();
-                vistaLibro.setNombreProyecto(this.proyecto.getNombre());
-                vistaLibro.setTareas(this.proyecto.getTareas());
-
-                vistaLibro.setVistaOrigen("libros.fxml");
-                vistaLibro.recibirData(this.datosProyectos);
-                this.datosProyectos.getControllers().getControllerPagPrincipal().cambiarStage(root);
-            } else {
-                mostrarAlertaError("Tienes que seleccionar algún libro");
-            }
-        } catch (IOException e) {
-            mostrarAlertaError("Error al cargar la vista del libro: " + e.getMessage());
-            e.printStackTrace();
-        }
-    }*/
     @FXML
     void ver(ActionEvent event) {
         this.datosProyectos.setProyectoSeleccionado(this.proyecto);
@@ -58,6 +36,7 @@ public class ControllerCadaProyecto {
         }
         VistaProyecto controllerVistaProyecto =fxmlLoader.getController();
         System.out.println("Proyecto escogido: "+this.proyecto.getNombre());
+        controllerVistaProyecto.setObjectProyecto(this.proyecto);
         controllerVistaProyecto.setNombreProyecto(this.proyecto.getNombre());
         LocalDate date=this.proyecto.getFecha();
         String fecha=date.format(formatter);

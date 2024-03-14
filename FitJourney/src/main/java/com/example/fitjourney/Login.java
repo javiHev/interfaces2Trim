@@ -23,6 +23,7 @@ public class Login {
     @FXML
     private PasswordField userPassword;
     private DatosProyectos datosProyectos=new DatosProyectos();
+    private DatosNotas datosNotas=new DatosNotas();
 
     public Login() throws ParseException {
     }
@@ -42,7 +43,7 @@ public class Login {
             Parent root = loader.load();
             PagPrincipal pagPrincipalController = loader.getController();
             pagPrincipalController.setUserName("@" + usuario);
-            pagPrincipalController.establecerDatos(this.datosProyectos);
+            pagPrincipalController.establecerDatos(this.datosProyectos,this.datosNotas);
 
             Stage stage = (Stage) btnInicio.getScene().getWindow();
             stage.setTitle("FitJourney");
