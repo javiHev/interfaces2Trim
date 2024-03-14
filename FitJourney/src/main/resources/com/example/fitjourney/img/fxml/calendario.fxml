@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import atlantafx.base.controls.Calendar?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="pagPrincipal" prefHeight="672.0" prefWidth="1014.0" stylesheets="@../../../../../style/editView.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fitjourney.ControllerCalendario">
+   <children>
+      <Calendar fx:id="calendario" layoutX="199.0" layoutY="71.0" prefHeight="471.0" prefWidth="616.0">
+         <stylesheets>
+            <URL value="@../../../../../style/editView.css" />
+            <URL value="@../../../../../style/calendario.css" />
+         </stylesheets>
+         <styleClass>
+            <String fx:value="label-frase" />
+            <String fx:value="calendar-month-text" />
+            <String fx:value="calendar-navigation-button" />
+            <String fx:value="calendar-today" />
+            <String fx:value="calendar-today-text" />
+         </styleClass></Calendar>
+   </children>
+</AnchorPane>

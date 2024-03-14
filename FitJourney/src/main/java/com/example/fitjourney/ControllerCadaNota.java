@@ -3,6 +3,7 @@ package com.example.fitjourney;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -22,6 +23,8 @@ public class ControllerCadaNota {
 
     @FXML
     void ver(ActionEvent event) {
+        Node source = (Node) event.getSource();
+        String idBtn = source.getId();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/fitjourney/img/fxml/add-notas-view.fxml"));
         try {
             Parent root = fxmlLoader.load();
@@ -31,9 +34,10 @@ public class ControllerCadaNota {
             // Necesitas obtener los datos del proyecto actual y pasárselos
             String titulo = this.nota.getTitulo(); // Si estos son Labels, obtendrás el texto directamente
             String descripcion=this.nota.getDescripcion();
-
+            controllerNotas.setNotaSeleccionada(this.nota);
             controllerNotas.setTituloNota(titulo);
-            controllerNotas.setVistaOrigen("/com/example/fitjourney/img/fxml/notas.fxml");
+            controllerNotas.iniciar(idBtn);
+            controllerNotas.setIdBoton(idBtn);
             controllerNotas.setDescripcionNota(descripcion);
 
             Scene scene = new Scene(root);

@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="670.0" prefWidth="1187.0" styleClass="anchor-fondo" stylesheets="@../../../../../style/estilo.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fitjourney.PagPrincipal">
+<AnchorPane prefHeight="670.0" prefWidth="1187.0" styleClass="anchor-fondo" stylesheets="@../../../../../style/estilo.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fitjourney.PagPrincipal">
    <children>
       <VBox alignment="BASELINE_CENTER" prefHeight="672.0" prefWidth="173.0" stylesheets="@../../../../../style/estilo.css">
          <children>
@@ -31,7 +31,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btnCalendario" mnemonicParsing="false" prefHeight="46.0" prefWidth="193.0" styleClass="button-style" stylesheets="@../../../../../style/estilo.css" text="Calendario">
+            <Button fx:id="btnCalendario" mnemonicParsing="false" onAction="#handlerCalendario" prefHeight="46.0" prefWidth="193.0" styleClass="button-style" stylesheets="@../../../../../style/estilo.css" text="Calendario">
                <graphic>
                   <ImageView fitHeight="35.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                      <image>

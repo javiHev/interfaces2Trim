@@ -3,6 +3,7 @@ package com.example.fitjourney;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -24,7 +25,7 @@ public class ControllerNotas {
     @FXML
     private ScrollPane rellenar; // Usamos ScrollPane en lugar de ScrollBar
     private VBox contenedorNotas = new VBox(); // Contenedor para las notas
-    private int numeroPagina = 0;
+    //private int numeroPagina = 0;
 
     @FXML
     public void initialize() {
@@ -65,6 +66,8 @@ public class ControllerNotas {
 
     @FXML
     void addNota(MouseEvent event) {
+        Node source = (Node) event.getSource();
+        String idBtn = source.getId();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/fitjourney/img/fxml/add-notas-view.fxml"));
         try {
             // Cargar el root desde el FXML
@@ -73,7 +76,8 @@ public class ControllerNotas {
             // Crear una nueva escena con el root
             Scene scene = new Scene(root);
             AddNotas contrrollerAddNota = fxmlLoader.getController();
-            contrrollerAddNota.setVistaOrigen("com/example/fitjourney/img/fxml/notas.fxml");
+            contrrollerAddNota.setIdBoton(idBtn);
+            contrrollerAddNota.iniciar(idBtn);
             // Crear un nuevo stage (ventana) para la nueva escena
             Stage nuevoStage = new Stage();
             nuevoStage.setScene(scene); // Establecer la escena en el stage

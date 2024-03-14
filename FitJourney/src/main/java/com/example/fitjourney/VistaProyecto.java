@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -32,11 +34,63 @@ public class VistaProyecto {
     @FXML
     private Label tarea3;
     private DatosProyectos datosProyectos;
+    private List<Proyectos>listaProyectos=DatosProyectos.getListaProyectos();
     private String vistaOrigen;
     private Proyectos proyectoSeleccionado;
 
     public void setVistaOrigen(String origen) {
         this.vistaOrigen = origen;
+    }
+
+
+    @FXML
+    private Button deleteBtn;
+
+    /*
+    * Boton para eliminar el proyecto
+    * */
+    @FXML
+    void deleteProyect(ActionEvent event){
+        int id= proyectoSeleccionado.getId();
+        boolean resultado = borrarProyecto(
+                id
+
+        );
+        if (resultado) {
+            fechaProyecto.setText("");
+            nombreProyecto.setText("Proyecto Borrado");
+            tarea1.setText("");
+            tarea2.setText("");
+            tarea3.setText("");
+            mostrarAlertaAceptar("Proyecto Borrado","Proyecto "+this.proyectoSeleccionado.getNombre()+" eliminado con éxito");
+        } else {
+            mostrarAlertaError("No se pudo borrar el proyecto");
+        }
+    }
+
+    private void mostrarAlertaAceptar(String titulo, String mensaje) {
+        Alert alerta = new Alert(Alert.AlertType.CONFIRMATION);
+        alerta.setTitle(titulo);
+        alerta.setHeaderText(null);
+        alerta.setContentText(mensaje);
+        alerta.showAndWait();
+    }
+    public void mostrarAlertaError(String mensaje) {
+        Alert alerta = new Alert(Alert.AlertType.ERROR);
+        alerta.setTitle("Error");
+        alerta.setHeaderText(null);
+        alerta.setContentText(mensaje);
+        alerta.showAndWait();
+    }
+    /*Metodo que elimina un proyecto por id*/
+    public boolean borrarProyecto(int id){
+        for(Proyectos proyecto : listaProyectos){
+            if(proyecto.getId()==id){
+                listaProyectos.remove(proyecto);
+                return true;
+            }
+        }
+        return false;
     }
     @FXML
     void returnToController(ActionEvent event) throws IOException {

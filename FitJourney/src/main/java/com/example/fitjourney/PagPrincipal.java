@@ -88,15 +88,15 @@ public class PagPrincipal  {
 
     }
 
- /*   @FXML
+    @FXML
     void handlerCalendario() throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("calendario.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/example/fitjourney/img/fxml/calendario.fxml"));
         Parent root = fxmlLoader.load();
         ControllerCalendario controllerCalendario = fxmlLoader.getController();
-        controllerVitaTabla.recibirData(this.creados);
+        //controllerCalendario.recibirData(this.creados);
         cambiarStage(root);
-    }*/
+    }
 
     @FXML
     void handlerNotas() throws IOException {
