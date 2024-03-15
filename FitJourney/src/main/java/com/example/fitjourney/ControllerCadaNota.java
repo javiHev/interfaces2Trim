@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -44,6 +45,7 @@ public class ControllerCadaNota {
             Stage nuevoStage = new Stage();
             nuevoStage.setScene(scene);
             nuevoStage.setTitle("Modificar Nota");
+            nuevoStage.initStyle(StageStyle.UNDECORATED);
             nuevoStage.show();
 
         } catch (IOException err) {

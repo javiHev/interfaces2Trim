@@ -4,7 +4,7 @@
 }
 
 .anchor-edit {
-    -fx-background-color: #EEEEEE;
+    -fx-background-color: #FFFFFF;
     -fx-background-radius: 8;
 }
 .label-frase{
@@ -67,7 +67,7 @@
 
 
 .text-field {
-    -fx-background-color: #EEEEEE; /* Color de fondo */
+    -fx-background-color: #FFFFFF; /* Color de fondo */
     -fx-background-insets: 0, 0 1 0; /* Asegura que solo la línea inferior sea visible */
     -fx-background-radius: 0; /* Sin bordes redondeados */
     -fx-faint-focus-color: transparent; /* Elimina el rectángulo de enfoque */
@@ -76,7 +76,7 @@
 }
 
 .text-field:focused {
-    -fx-background-color: #EEEEEE; /* Mantiene el color de fondo y añade la línea debajo del texto */
+    -fx-background-color: #FFFFFF; /* Mantiene el color de fondo y añade la línea debajo del texto */
     -fx-background-insets: 0, 0 1 0; /* Ajuste para que solo la línea inferior sea visible */
 }
 

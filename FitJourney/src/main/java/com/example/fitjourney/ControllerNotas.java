@@ -13,6 +13,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
@@ -82,6 +83,7 @@ public class ControllerNotas {
             Stage nuevoStage = new Stage();
             nuevoStage.setScene(scene); // Establecer la escena en el stage
             nuevoStage.setTitle("Añadir Nota"); // Opcional: establecer un título para el stage
+            nuevoStage.initStyle(StageStyle.UNDECORATED);
 
             // Mostrar el nuevo stage
             nuevoStage.show();

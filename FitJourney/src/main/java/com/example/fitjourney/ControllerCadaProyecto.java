@@ -20,7 +20,7 @@ public class ControllerCadaProyecto {
     private ImageView imageView;
     private DatosProyectos datosProyectos;
     private Proyectos proyecto;
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
 
     @FXML

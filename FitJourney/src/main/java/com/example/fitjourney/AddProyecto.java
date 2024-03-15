@@ -16,6 +16,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 import java.util.Objects;
 
 public class AddProyecto {
@@ -40,10 +41,11 @@ public class AddProyecto {
 
     @FXML
     void crearProyecto(ActionEvent event) {
+        System.out.println("VistaOrigen"+vistaOrigen);
         if(vistaOrigen==null){
             mostrarAlertaError("No se ha cargado la vista origen");
         }
-        if(Objects.equals(vistaOrigen, "/com/example/fitjourney/img/fxml/proyectos.fxml")) {
+        if(vistaOrigen.equals("com/example/fitjourney/img/fxml/proyectos.fxml")) {
             String nombre = nombreProyecto.getText();
             String tarea1 = txt1Field.getText();
             String tarea2 = txt2Field.getText();
@@ -138,7 +140,8 @@ public class AddProyecto {
 
     public void setFechaEscogida(String fechaEnString) {
         // Convierte el String a LocalDate
-        LocalDate fecha = LocalDate.parse(fechaEnString, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy", Locale.FRANCE);
+        LocalDate fecha = LocalDate.parse(fechaEnString, formatter);
         // Establece la fecha en el DatePicker
         fechaEscogida.setValue(fecha);
         setColorFechaEscogida(fechaEscogida);

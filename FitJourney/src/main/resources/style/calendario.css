@@ -1,24 +1,34 @@
 /* Estilo para la barra del mes */
-.calendar-month-bar {
-    -fx-background-color: #43C07A;
+.calendar-grid {
+    -fx-background-color: #43C079;
+    -fx-padding:10;
+    -fx-vgap:5;
+    -fx-background-radius:10;
+    -fx-text-fill:#18244A;
 }
 
 /* Estilo para el texto del mes */
-.calendar-month-text {
-    -fx-text-fill: white;
+.calendar-grid > -date-cell {
+    -fx-background-color:transparent;
+    -fx-padding:0;
+    -fx-aligment: BASELINE_CENTER;
+    -fx-opacity:1.0;
+    -fx-text-fill:#41BA75;
+    -fx-cell-size:40;
+    -fx-font-size:33;
 }
 
-/* Estilo para los botones de navegación (adelante y atrás) */
-.calendar-navigation-button {
-    -fx-fill: white; /* Esto es para íconos vectoriales, por ejemplo, si usan SVGPath */
+.calendar-grid > .day-cell{
+    -fx-background-color:#EEEEEE;
 }
 
-/* Estilo para el cuadrado del día actual */
-.calendar-today {
-    -fx-background-color: #D4F3E2;
+.calendar-grid > .today{
+-fx-background-color:#D4F3E2;
+-fx-text-fill:#3D9F67;
+
 }
 
-/* Estilo para el texto del día actual */
-.calendar-today-text {
-    -fx-text-fill: #3D9F67;
+.calendar-grid > .selected{
+ -fx-background-color:#3D9F67;
+ -fx-text-fill:#EEEEEE;
 }

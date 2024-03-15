@@ -94,7 +94,7 @@ public class PagPrincipal  {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/example/fitjourney/img/fxml/calendario.fxml"));
         Parent root = fxmlLoader.load();
         ControllerCalendario controllerCalendario = fxmlLoader.getController();
-        //controllerCalendario.recibirData(this.creados);
+        controllerCalendario.recibirData(datosProyectos);
         cambiarStage(root);
     }
 
@@ -148,6 +148,10 @@ public class PagPrincipal  {
         PagPrincipal.datosProyectos = datosProyectos;
         PagPrincipal.datosNotas=datosNotas;
         DatosProyectos.getControllers().setControllerPanelPrincipal(this);
+    }
+
+    public static DatosProyectos getDatosProyectos(){
+        return datosProyectos;
     }
 
 

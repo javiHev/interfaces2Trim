@@ -13,6 +13,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
@@ -88,11 +89,12 @@ public class ControllerProyectos {
             // Crear una nueva escena con el root
             Scene scene = new Scene(root);
             AddProyecto controllerProyecto = fxmlLoader.getController();
-            controllerProyecto.setVistaOrigen("com/example/fitjourney/img/fxml/proyectos.fxml");
+            controllerProyecto.setVistaOrigen("/com/example/fitjourney/img/fxml/proyectos.fxml");
             // Crear un nuevo stage (ventana) para la nueva escena
             Stage nuevoStage = new Stage();
             nuevoStage.setScene(scene); // Establecer la escena en el stage
             nuevoStage.setTitle("Añadir Proyecto"); // Opcional: establecer un título para el stage
+            nuevoStage.initStyle(StageStyle.UNDECORATED);
 
             // Mostrar el nuevo stage
             nuevoStage.show();
