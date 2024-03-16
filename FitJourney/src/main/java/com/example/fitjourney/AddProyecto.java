@@ -45,7 +45,7 @@ public class AddProyecto {
         if(vistaOrigen==null){
             mostrarAlertaError("No se ha cargado la vista origen");
         }
-        if(vistaOrigen.equals("com/example/fitjourney/img/fxml/proyectos.fxml")) {
+        if(vistaOrigen.equals("/com/example/fitjourney/img/fxml/proyectos.fxml")) {
             String nombre = nombreProyecto.getText();
             String tarea1 = txt1Field.getText();
             String tarea2 = txt2Field.getText();

@@ -61,4 +61,6 @@ public class ControllerCadaNota {
         this.nota=nota;
         this.notaBtn.setText(nota.getTitulo());
     }
+
+
 }

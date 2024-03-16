@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.ResourceBundle;
+import java.util.Random;
 
 public class Login {
 
@@ -24,6 +25,7 @@ public class Login {
     private PasswordField userPassword;
     private DatosProyectos datosProyectos=new DatosProyectos();
     private DatosNotas datosNotas=new DatosNotas();
+    private DatosContactos datosContactos=new DatosContactos();
 
     public Login() throws ParseException {
     }
@@ -31,6 +33,9 @@ public class Login {
 
     @FXML
     void validarAcceso(ActionEvent event) throws IOException {
+        Random rand = new Random();
+        int kcal = rand.nextInt(451);
+        int bpm = 60 + rand.nextInt(81);
         //Variables para cambiar Stage
         Button button = (Button) event.getSource(); // Obtiene el botón que desencadenó el evento
         String fxmlResource = null; // Ruta al archivo FXML que se cargará
@@ -43,7 +48,9 @@ public class Login {
             Parent root = loader.load();
             PagPrincipal pagPrincipalController = loader.getController();
             pagPrincipalController.setUserName("@" + usuario);
-            pagPrincipalController.establecerDatos(this.datosProyectos,this.datosNotas);
+            pagPrincipalController.establecerDatos(this.datosProyectos,this.datosNotas,this.datosContactos);
+            pagPrincipalController.setBpmDia(String.valueOf(bpm));
+            pagPrincipalController.setKcalDiarias(String.valueOf(kcal));
 
             Stage stage = (Stage) btnInicio.getScene().getWindow();
             stage.setTitle("FitJourney");

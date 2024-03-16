@@ -96,7 +96,7 @@
                      </image>
                   </ImageView>
                   <Label layoutX="120.0" layoutY="112.0" prefHeight="88.0" prefWidth="82.0" styleClass="label-valores" stylesheets="@../../../../../style/principal.css" text="kcal" />
-                  <Label layoutX="16.0" layoutY="105.0" styleClass="label-data" stylesheets="@../../../../../style/principal.css" text="110" />
+                  <Label fx:id="kcalDiarias" layoutX="16.0" layoutY="105.0" styleClass="label-data" stylesheets="@../../../../../style/principal.css" text="110" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="546.0" layoutY="360.0" prefHeight="206.0" prefWidth="305.0" styleClass="anchor-rpm" stylesheets="@../../../../../style/principal.css">
@@ -106,11 +106,11 @@
                         <Image url="@../icons/img_6.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="90.0" layoutY="127.0" prefHeight="29.0" prefWidth="82.0" styleClass="label-valores" stylesheets="@../../../../../style/principal.css" text="BPM" />
-                  <Label layoutX="14.0" layoutY="103.0" styleClass="label-data" stylesheets="@../../../../../style/principal.css" text="82" />
+                  <Label layoutX="112.0" layoutY="127.0" prefHeight="29.0" prefWidth="82.0" styleClass="label-valores" stylesheets="@../../../../../style/principal.css" text="BPM" />
+                  <Label fx:id="bpmDia" layoutX="14.0" layoutY="103.0" styleClass="label-data" stylesheets="@../../../../../style/principal.css" text="82" />
                </children>
             </AnchorPane>
-            <ImageView fx:id="btnChat" fitHeight="55.0" fitWidth="59.0" layoutX="920.0" layoutY="603.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="btnChat" fitHeight="55.0" fitWidth="59.0" layoutX="920.0" layoutY="603.0" onMouseClicked="#openChat" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../icons/img_7.png" />
                </image>

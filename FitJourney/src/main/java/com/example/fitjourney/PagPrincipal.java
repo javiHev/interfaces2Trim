@@ -9,9 +9,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
@@ -38,6 +40,12 @@ public class PagPrincipal  {
 
     @FXML
     private ImageView btnChat;
+    @FXML
+    private Label bpmDia;
+
+    @FXML
+    private Label kcalDiarias;
+
 
     @FXML
     private Button btnContactos;
@@ -136,17 +144,47 @@ public class PagPrincipal  {
         String originalText = userName.getText(); // "Bienvenido userName!!"
 // Elimina las partes no deseadas de la cadena
         String cleanedText = originalText.replace("Bienvenido ", "").replace("!!", "").trim();
+        String originalBMP=bpmDia.getText();
+        String originalKcal=kcalDiarias.getText();
         controllerPagPrincipal.setUserName(cleanedText);
+        controllerPagPrincipal.setKcalDiarias(originalKcal);
+        controllerPagPrincipal.setBpmDia(originalBMP);
         cambiarStage(root);
+    }
+
+    //Preguntar chat
+    @FXML
+    void openChat(MouseEvent event) {
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/fitjourney/img/fxml/chat.fxml"));
+        try {
+            // Cargar el root desde el FXML
+            Parent root = fxmlLoader.load();
+
+            // Crear una nueva escena con el root
+            Scene scene = new Scene(root);
+            Stage nuevoStage = new Stage();
+            nuevoStage.setScene(scene); // Establecer la escena en el stage
+            nuevoStage.setTitle("Chat"); // Opcional: establecer un título para el stage
+            nuevoStage.initStyle(StageStyle.UNDECORATED);
+
+            // Mostrar el nuevo stage
+            nuevoStage.show();
+
+
+        } catch (IOException err) {
+            System.out.println(err.getMessage());
+        }
     }
 
     public void setUserName(String s) {
         this.userName.setText("Bienvenido "+s+"!!");
     }
 
-    public void establecerDatos(DatosProyectos datosProyectos,DatosNotas datosNotas) {
+    public void establecerDatos(DatosProyectos datosProyectos,DatosNotas datosNotas,DatosContactos datosContactos) {
         PagPrincipal.datosProyectos = datosProyectos;
         PagPrincipal.datosNotas=datosNotas;
+        PagPrincipal.datosContactos=datosContactos;
         DatosProyectos.getControllers().setControllerPanelPrincipal(this);
     }
 
@@ -154,5 +192,12 @@ public class PagPrincipal  {
         return datosProyectos;
     }
 
+    public void setBpmDia(String bpmDia) {
 
+        this.bpmDia.setText(bpmDia);
+    }
+
+    public void setKcalDiarias(String  kcalDiarias) {
+        this.kcalDiarias.setText(kcalDiarias);
+    }
 }

@@ -90,6 +90,7 @@ public class ControllerProyectos {
             Scene scene = new Scene(root);
             AddProyecto controllerProyecto = fxmlLoader.getController();
             controllerProyecto.setVistaOrigen("/com/example/fitjourney/img/fxml/proyectos.fxml");
+
             // Crear un nuevo stage (ventana) para la nueva escena
             Stage nuevoStage = new Stage();
             nuevoStage.setScene(scene); // Establecer la escena en el stage

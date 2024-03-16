@@ -1,24 +1,3 @@
-.table-view {
-    -fx-base: #025E2E; /* Color base para el degradado de la tabla */
-}
-
-.table-view .column-header-background {
-    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%,  #43C07A, #025E2E); /* Degradado para los encabezados de las columnas */
-    -fx-text-fill:#EEEEE;
-}
-
-.table-row-cell {
-    -fx-text-fill: white; /* Color del texto de las filas */
-}
-
-.table-row-cell:selected {
-    -fx-background-color: #034A63; /* Azul oscuro para la fila seleccionada */
-    -fx-text-fill: white; /* Mantener el texto blanco cuando se selecciona */
-}
-
-.table-cell {
-    -fx-text-fill: white; /* Color del texto de las celdas */
-}
 .column-text-color{
     -fx-text-fill:#EEEEE;
 }
@@ -46,4 +25,77 @@
 .button-color:pressed {
     -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #BB0505, #3E1111);
     -fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.6), 4, 0.0, 0, 1); /* Sombra más intensa para el efecto de presionado */
+}
+.scroll-pane {
+    -fx-background-color: linear-gradient(from 0% 0% to 0% 100%, #3DB671, #035C29);
+    -fx-background-radius: 20;
+    -fx-padding: 0; /* Asegura que no hay relleno extra alrededor del contenido del ScrollPane */
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent; /* Hace el fondo del viewport transparente para que se vea el degradado */
+    -fx-background-radius: 20; /* Asegura que el contenido también tenga bordes redondeados */
+}
+
+.scroll-pane .content {
+    -fx-background-radius: 20; /* Aplica el radio de borde al contenido dentro del ScrollPane */
+}
+
+.scroll-pane .scroll-bar:vertical, .scroll-pane .scroll-bar:horizontal {
+    -fx-background-radius: 10; /* Aplica bordes redondeados a las barras de desplazamiento */
+    -fx-background-color: #3DB671; /* Color de las barras de desplazamiento */
+}
+
+.scroll-pane .scroll-bar .thumb {
+    -fx-background-color: darken(#3DB671, 30%); /* Color de la parte móvil de las barras de desplazamiento */
+    -fx-background-radius: 10; /* Aplica bordes redondeados a la parte móvil de las barras */
+}
+.scroll-pane2 {
+    -fx-background-color: linear-gradient(to bottom, #18244A 0%, #1A717D 100%);
+    -fx-background-radius: 20;
+    -fx-padding: 0; /* Asegura que no hay relleno extra alrededor del contenido del ScrollPane */
+}
+
+.scroll-pane2 .viewport {
+    -fx-background-color: transparent; /* Hace el fondo del viewport transparente para que se vea el degradado */
+    -fx-background-radius: 20; /* Asegura que el contenido también tenga bordes redondeados */
+}
+
+.scroll-pane2 .content {
+    -fx-background-radius: 20; /* Aplica el radio de borde al contenido dentro del ScrollPane */
+}
+
+.scroll-pane2 .scroll-bar:vertical, .scroll-pane .scroll-bar:horizontal {
+    -fx-background-radius: 10; /* Aplica bordes redondeados a las barras de desplazamiento */
+    -fx-background-color: #5C6FAB; /* Color de las barras de desplazamiento */
+}
+
+.scroll-pane2 .scroll-bar .thumb {
+    -fx-background-color: darken(#3DB671, 30%); /* Color de la parte móvil de las barras de desplazamiento */
+    -fx-background-radius: 10; /* Aplica bordes redondeados a la parte móvil de las barras */
+}
+
+.scroll-pane3 {
+    -fx-background-color: linear-gradient(to bottom, #A6E8F2 0%, #1A717D 100%);
+    -fx-background-radius: 20;
+    -fx-padding: 0; /* Asegura que no hay relleno extra alrededor del contenido del ScrollPane */
+}
+
+.scroll-pane3 .viewport {
+    -fx-background-color: transparent; /* Hace el fondo del viewport transparente para que se vea el degradado */
+    -fx-background-radius: 20; /* Asegura que el contenido también tenga bordes redondeados */
+}
+
+.scroll-pane3 .content {
+    -fx-background-radius: 20; /* Aplica el radio de borde al contenido dentro del ScrollPane */
+}
+
+.scroll-pane3 .scroll-bar:vertical, .scroll-pane .scroll-bar:horizontal {
+    -fx-background-radius: 10; /* Aplica bordes redondeados a las barras de desplazamiento */
+    -fx-background-color: #5C6FAB; /* Color de las barras de desplazamiento */
+}
+
+.scroll-pane3 .scroll-bar .thumb {
+    -fx-background-color: darken(#3DB671, 30%); /* Color de la parte móvil de las barras de desplazamiento */
+    -fx-background-radius: 10; /* Aplica bordes redondeados a la parte móvil de las barras */
 }
